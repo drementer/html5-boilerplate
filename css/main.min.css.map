@@ -1,11 +1,12 @@
 {
     "version": 3,
-    "mappings": "AKAA,OAAO,CAAC,8EAAI,CDAZ,AAAA,IAAI,CACJ,IAAI,AAAA,CACA,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,CAAC,CACb,AAED,AAAA,IAAI,AAAA,CACA,SAAS,CAAE,IAAI,CAClB,ACND,AAAA,CAAC,AAAA,CACG,WAAW,CAAE,WAAW,CAC3B",
+    "mappings": "AMAA,OAAO,CAAC,8EAAI;ADAZ,AAAA,IAAI;AACJ,IAAI,CAAA;EACA,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;CACb;;AAED,AAAA,IAAI,CAAA;EACA,SAAS,EAAE,IAAI;CAClB;;ACND,AAAA,CAAC,CAAA;EACG,WAAW,EAAE,WAAW;CAC3B;;AQqBD,AAAA,CAAC,CAAA;EAHG,GAAG,EAZW,gCAAC;CAiBlB",
     "sources": [
         "../scss/main.scss",
         "../scss/utils/_variables.scss",
         "../scss/utils/_placeholders.scss",
         "../scss/utils/_mixins.scss",
+        "../scss/utils/_functions.scss",
         "../scss/base/_reset.scss",
         "../scss/base/_typography.scss",
         "../scss/layouts/_aside.scss",
@@ -14,7 +15,8 @@
         "../scss/layouts/_header.scss",
         "../scss/pages/_home.scss",
         "../scss/themes/_default.scss",
-        "../scss/themes/_dark.scss"
+        "../scss/themes/_dark.scss",
+        "../scss/_test-alani.scss"
     ],
     "names": [],
     "file": "main.min.css"
