@@ -8,18 +8,14 @@
         }
     }@else if $veri-tipi == string{
 
-        @if $veri == pc {
-            $break-point : 1200;
-        } @else if $veri == laptop {
-            $break-point : 992;
-        } @else if $veri == tablet {
-            $break-point : 768;
-        } @else if $veri == telefon {
-            $break-point : 600;
+        @each $deger, $index in $points{
+            @if $veri == $deger{
+                $break-point: $index;
+            }
         }
     
         @if $break-point != null {
-            @media media and (max-width: #{$break-point}px) {
+            @media media and (max-width: #{$break-point}#{$prefix}) {
                 @content;
             }
         } @else {

@@ -1,0 +1,11 @@
+// -- Break Point Ayarları
+$prefix: px; // null, px, rem, em, vh, vw
+
+// İstediğini silebilir veya yeni değerler ekleyebilirsiniz
+$points: (
+    pc: 1200,
+    laptop: 992,
+    tablet: 768,
+    telefon: 600
+);
+// -----------------------
