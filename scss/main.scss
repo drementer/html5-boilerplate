@@ -1,27 +1,33 @@
+@import 
+
 // Utils
-@import "utils/variables";
-@import "utils/placeholders";
-@import "utils/mixins";
+"utils/variables",
+"utils/placeholders",
+"utils/mixins",
+"utils/functions",
 
 // Base 
-@import "base/reset";  
-@import "base/typography";  
+"base/reset",
+"base/typography",
 
 // Components
 // Boş
 
 // Layouts
-@import "layouts/aside";
-@import "layouts/base";
-@import "layouts/footer";
-@import "layouts/header";
+"layouts/aside",
+"layouts/base",
+"layouts/footer",
+"layouts/header",
 
 // Pages
-@import "pages/home";
+"pages/home",
 
 // Themes
-@import "themes/default";
-@import "themes/dark";
+"themes/default",
+"themes/dark",
 
 // Vendors
 // Boş
+
+// Test alanı
+"test-alani";
