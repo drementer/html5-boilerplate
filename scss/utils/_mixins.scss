@@ -1,0 +1,34 @@
+@mixin break-point($veri) {
+    $veri-tipi: type-of($veri);
+    $break-point: null;
+
+    @if $veri-tipi == number{
+        @media media and (max-width: #{$veri}) {
+            @content;
+        }
+    }@else if $veri-tipi == string{
+
+        @if $veri == pc {
+            $break-point : 1200;
+        } @else if $veri == laptop {
+            $break-point : 992;
+        } @else if $veri == tablet {
+            $break-point : 768;
+        } @else if $veri == telefon {
+            $break-point : 600;
+        }
+    
+        @if $break-point != null {
+            @media media and (max-width: #{$break-point}px) {
+                @content;
+            }
+        } @else {
+            @warn "Hatalı breakpoint değeri";
+            /* 
+                !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                Hatalı breakpoint değeri 
+                !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            */
+        }
+    }
+}
