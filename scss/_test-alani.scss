@@ -23,8 +23,6 @@
     gap: $t;
 }
 
-main{
-    @include break-point(laptop){
-        font-style: italic;
-    }
+a{
+    @include test();
 }

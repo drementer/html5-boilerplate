@@ -13,9 +13,7 @@ html {
   font-family: "Fira Code";
 }
 
-@media media and (max-width: 992px) {
-  main {
-    font-style: italic;
-  }
+a {
+  gap: flex-row__justify-content-center;
 }
 /*# sourceMappingURL=main.min.css.map */
