@@ -1,21 +1,21 @@
 @mixin break-point($veri) {
     $veri-tipi: type-of($veri);
     $break-point: null;
-
+    
     @if $veri-tipi == number{
-        @media media and (max-width: #{$veri}) {
+        @media screen and (max-width: #{$veri}) {
             @content;
         }
     }@else if $veri-tipi == string{
-
+        
         @each $deger, $index in $points{
             @if $veri == $deger{
                 $break-point: $index;
             }
         }
-    
+        
         @if $break-point != null {
-            @media media and (max-width: #{$break-point}#{$prefix}) {
+            @media screen and (max-width: #{$break-point}#{$prefix}) {
                 @content;
             }
         } @else {
