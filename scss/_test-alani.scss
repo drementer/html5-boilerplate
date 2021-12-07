@@ -1,47 +1,21 @@
-@function kes(){
-    $test: flex-row__justify-content-center__a;
-    $son_kelime: null;
-    $sonuc: null;
-    $uzunluk : str-length($test); //4
-    @for $i from 1 through $uzunluk {
-        $a: str-slice($test, $i, $i);
-        @if $a == "_"{
-            $son_kelime: $i;
-            $kelime: str-slice($test, -$uzunluk, $son_kelime - 2);
-            $sonuc:#{$kelime};
+/* p{
+    @include flex(
+        $flex-direction: row,
+        $gap: 1em,
+        $justify-content: center,
+    );
 
-            @for $j from $son_kelime through 1{
-                $a: str-slice($test, $i, $i);
-            }
-        }
+    @include break-point(pc){
+        @include flex(
+            $flex-direction: column,
+            $gap: 2em,
+            $justify-content: flex-start,
+        );
     }
-    @return $sonuc;
-}
-
-@mixin test {
-    $t : kes();
-    gap: $t;
-}
+} */
 
 a{
-    @include test();
-}
-
-@mixin syntax-colors($args...) {
-    @debug meta.keywords($args);
-    // (string: #080, comment: #800, variable: #60b)
-
-    @each $name, $color in meta.keywords($args) {
-        pre span.stx-#{$name} {
-        color: $color;
-        }
+    @include flex(){
+        flex-direction: column; 
     }
-}
-
-p{
-    @include syntax-colors(
-        $string: #080,
-        $comment: #800,
-        $variable: #60b,
-    )
 }

@@ -1,4 +1,15 @@
+@charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Fira+Code:300,regular,500,600,700);
+/* 
+    @mixin flex($degerler...) {
+        @debug meta.keywords($degerler);
+
+        display: flex;
+        @each $ozellik, $deger in meta.keywords($degerler) {
+            # {$ozellik}: $deger; // baştaki boşluğu kaldır açarken
+        }
+    } 
+*/
 html,
 body {
   margin: 0;
@@ -20,16 +31,22 @@ html {
   scroll-behavior: smooth;
 }
 
-a {
-  gap: flex-row__justify-content-center;
-}
+/* p{
+    @include flex(
+        $flex-direction: row,
+        $gap: 1em,
+        $justify-content: center,
+    );
 
-p pre span.stx-string {
-  color: #080;
-}
-p pre span.stx-comment {
-  color: #800;
-}
-p pre span.stx-variable {
-  color: #60b;
+    @include break-point(pc){
+        @include flex(
+            $flex-direction: column,
+            $gap: 2em,
+            $justify-content: flex-start,
+        );
+    }
+} */
+a {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=main.min.css.map */
