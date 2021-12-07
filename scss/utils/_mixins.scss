@@ -28,3 +28,19 @@
         }
     }
 }
+
+/* 
+    @mixin flex($degerler...) {
+        @debug meta.keywords($degerler);
+
+        display: flex;
+        @each $ozellik, $deger in meta.keywords($degerler) {
+            # {$ozellik}: $deger; // baştaki boşluğu kaldır açarken
+        }
+    } 
+*/
+
+@mixin flex {
+    display: flex;
+    @content;
+}
