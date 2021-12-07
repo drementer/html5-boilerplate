@@ -23,4 +23,13 @@ html {
 a {
   gap: flex-row__justify-content-center;
 }
-/*# sourceMappingURL=main.min.css.map */
+
+p pre span.stx-string {
+  color: #080;
+}
+p pre span.stx-comment {
+  color: #800;
+}
+p pre span.stx-variable {
+  color: #60b;
+}/*# sourceMappingURL=main.min.css.map */
