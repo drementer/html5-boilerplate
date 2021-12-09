@@ -6,10 +6,10 @@ $prefix: px; // null, px, rem, em, vh, vw
 // Hazır ayarlar
 // İstediğini silebilir veya yeni değerler ekleyebilirsiniz
 $points: (
-    pc: 1200,
-    laptop: 992,
-    tablet: 769,
-    telefon: 600
+    "pc": 1200,
+    "laptop": 992,
+    "tablet": 769,
+    "telefon": 600
 );
 // https://sass-lang.com/documentation/modules/list
 // https://sass-lang.com/documentation/modules/string
