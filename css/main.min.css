@@ -49,4 +49,24 @@ html {
 a {
   display: flex;
   flex-direction: column;
+}
+@media screen and (min-width: 1200px) {
+  a {
+    color: red;
+  }
+}
+@media screen and (min-width: 769px) {
+  a {
+    color: red;
+  }
+}
+@media screen and (max-width: 500) {
+  a {
+    color: red;
+  }
+}
+
+p {
+  font-size: 12px;
+  font-size: 0.75em;
 }/*# sourceMappingURL=main.min.css.map */

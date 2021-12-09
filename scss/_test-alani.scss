@@ -18,4 +18,20 @@ a{
     @include flex(){
         flex-direction: column; 
     }
+
+    @include break-point(pc,min){
+        color: red;
+    }
+
+    @include break-point(tablet,min){
+        color: red;
+    }
+
+    @include break-point(500){
+        color: red;
+    }
+}
+
+p {
+    @include font-size(12);
 }
