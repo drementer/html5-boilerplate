@@ -1,0 +1,5 @@
+@function em-hesapla($size, $rem) {
+    $rem: 16 * $rem;
+    $em: $size / $rem;
+    @return $em * 1em;
+}
