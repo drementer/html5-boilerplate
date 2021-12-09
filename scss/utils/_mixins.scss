@@ -1,9 +1,9 @@
-@mixin break-point($veri) {
+@mixin break-point($veri, $tip: max) {
     $veri-tipi: type-of($veri);
     $break-point: null;
     
     @if $veri-tipi == number{
-        @media screen and (max-width: #{$veri}) {
+        @media screen and (#{$tip}-width: #{$veri}) {
             @content;
         }
     }@else if $veri-tipi == string{
@@ -15,7 +15,7 @@
         }
         
         @if $break-point != null {
-            @media screen and (max-width: #{$break-point}#{$prefix}) {
+            @media screen and (#{$tip}-width: #{$break-point}#{$prefix}) {
                 @content;
             }
         } @else {
@@ -27,6 +27,11 @@
             */
         }
     }
+}
+
+@mixin font-size($size, $rem: 1) {
+    font-size: $size * 1px;
+    font-size: em-hesapla($size, $rem);
 }
 
 /* 
@@ -43,4 +48,15 @@
 @mixin flex {
     display: flex;
     @content;
+}
+
+@mixin font-face($name, $file) {
+    @font-face {
+        font-family: "#{$name}";
+        src: url("../fonts/#{$file}.eot");
+        src: url("../fonts/#{$file}.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/#{$file}.woff") format("woff"),
+        url("../fonts/#{$file}.ttf") format("truetype"),
+        url("../fonts/#{$file}.svg?#webfont") format("svg");
+    }
 }
