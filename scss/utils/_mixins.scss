@@ -1,3 +1,4 @@
+// Break Point
 @mixin break-point($veri, $tip: max) {
     $veri-tipi: type-of($veri);
     $break-point: null;
@@ -28,28 +29,27 @@
         }
     }
 }
+// Break Point SON
 
-@mixin font-size($size, $rem: 1) {
+
+// Tema
+@mixin tema($tema: "default") {
+    $element: #{&};
+    @at-root html[data-theme=#{$tema}] #{$element} {
+        @content;
+    }
+}
+// Tema SON
+
+// Font Size
+@mixin fs($size, $rem: 1) {
     font-size: $size * 1px;
     font-size: em-hesapla($size, $rem);
 }
+// Font Size SON
 
-/* 
-    @mixin flex($degerler...) {
-        @debug meta.keywords($degerler);
 
-        display: flex;
-        @each $ozellik, $deger in meta.keywords($degerler) {
-            # {$ozellik}: $deger; // baştaki boşluğu kaldır açarken
-        }
-    } 
-*/
-
-@mixin flex {
-    display: flex;
-    @content;
-}
-
+// Font Face
 @mixin font-face($name, $file) {
     @font-face {
         font-family: "#{$name}";
@@ -60,3 +60,4 @@
         url("../fonts/#{$file}.svg?#webfont") format("svg");
     }
 }
+// Font Face SON
