@@ -1,8 +1,9 @@
 {
   "name": "html-dosya-yapim",
   "version": "1.0.0",
+  "homepage": "http://drementer.com",
   "description": "Projelerimde kullanmak için hazırladığım kalıp dosyam",
-  "main": "",
+  "main": "main.scss",
   "scripts": {
     "": ""
   },
@@ -10,10 +11,13 @@
     "type": "git",
     "url": "git+https://github.com/drementer/html-dosya-yapim.git"
   },
-  "author": "drementer",
+  "author": {
+    "name": "drementer",
+    "email": "klncarslanburak@gmail.com",
+    "url": "http://drementer.com"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/drementer/html-dosya-yapim/issues"
-  },
-  "homepage": "https://github.com/drementer/html-dosya-yapim#readme"
+  }
 }
