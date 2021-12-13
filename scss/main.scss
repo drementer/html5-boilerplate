@@ -9,35 +9,27 @@
 /////////////////////////////////////
 @import 
 
-// Utils
-"utils/settings",
-"utils/variables",
-"utils/placeholders",
-"utils/mixins",
-"utils/functions",
+    // Utils
+    "utils/all",
 
-// Base 
-"base/reset",
-"base/typography",
+    // Base 
+    "base/all",
 
-// Components
-// Boş
+    // Components
+    // Boş
 
-// Layouts
-"layouts/aside",
-"layouts/base",
-"layouts/footer",
-"layouts/header",
+    // Layouts
+    "layouts/all",
 
-// Pages
-"pages/home",
+    // Pages
+    "pages/all",
 
-// Themes
-"themes/default",
-"themes/dark",
+    // Themes
+    "themes/all",
 
-// Vendors
-// Boş
+    // Vendors
+    // Boş
 
-// Test alanı
-"test-alani";
+    // Test alanı
+    "test-alani"
+;
