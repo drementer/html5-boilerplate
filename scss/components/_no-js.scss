@@ -1,0 +1,50 @@
+div.no-js{
+    font-size: 1rem;
+    position: sticky;
+    top: 1em;
+    background-color: $no-js__arkaplan;
+    margin: 2em auto 1em;
+    width: clamp(10em, calc(100% - 2em), 50em); 
+
+    display: flex;
+    align-content: stretch;
+
+    .__ikon{
+        width: 7em;
+        background-color: $no-js__border;
+        align-self: stretch;
+        display: flex;
+        justify-content: center;
+        padding: 1em;
+        border-radius: 10px 0 0 10px;
+
+        img{
+            width: 100%;
+        }
+
+        @include break-point(tablet){
+            display: none;
+        }
+    }
+
+    .__icerik{
+        padding: 1em 1.5em;
+        display: flex;
+        align-items: center;
+
+        p{
+            @include fs(16);
+            text-indent: .6em;
+            color: $no-js__yazi;
+        }
+    }
+
+    @include break-point(laptop){
+        @include fs(14);
+    }
+
+    @include break-point(tablet){
+        border-left: 3px solid $no-js__border;
+        margin: 2em 1em 1em;
+    }
+}
