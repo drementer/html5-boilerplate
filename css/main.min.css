@@ -1,15 +1,4 @@
-@charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Fira+Code:300,regular,500,600,700);
-/* 
-    @mixin flex($degerler...) {
-        @debug meta.keywords($degerler);
-
-        display: flex;
-        @each $ozellik, $deger in meta.keywords($degerler) {
-            # {$ozellik}: $deger; // baştaki boşluğu kaldır açarken
-        }
-    } 
-*/
 html,
 body {
   margin: 0;
@@ -46,26 +35,16 @@ html {
         );
     }
 } */
-a {
-  display: flex;
-  flex-direction: column;
-}
-@media screen and (min-width: 1200px) {
-  a {
-    color: red;
-  }
-}
-@media screen and (min-width: 769px) {
-  a {
-    color: red;
-  }
-}
-@media screen and (max-width: 500) {
-  a {
-    color: red;
-  }
+/* aaa */
+html[data-theme=dark] a {
+  color: red;
 }
 
+html[data-theme=default] a {
+  color: yellow;
+}
+
+/* aaa son */
 p {
   font-size: 12px;
   font-size: 0.75em;

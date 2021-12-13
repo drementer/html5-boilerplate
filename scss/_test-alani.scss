@@ -14,24 +14,18 @@
     }
 } */
 
+/* aaa */
 a{
-    @include flex(){
-        flex-direction: column; 
-    }
-
-    @include break-point(pc,min){
+    @include tema("dark"){
         color: red;
     }
 
-    @include break-point(tablet,min){
-        color: red;
-    }
-
-    @include break-point(500){
-        color: red;
+    @include tema("default"){
+        color: yellow;
     }
 }
+/* aaa son */
 
 p {
-    @include font-size(12);
+    @include fs(12);
 }
