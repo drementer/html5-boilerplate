@@ -61,3 +61,9 @@
     }
 }
 // Font Face SON
+
+
+@mixin ortala {
+    left: 50%;
+    transform: translateX(-50%);
+}
