@@ -41,6 +41,7 @@
 }
 // Tema SON
 
+
 // Font Size
 @mixin fs($size, $rem: 1) {
     font-size: $size * 1px;
@@ -63,7 +64,48 @@
 // Font Face SON
 
 
+// Genel
 @mixin ortala {
     left: 50%;
     transform: translateX(-50%);
 }
+
+@mixin cover-background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+// Genel SON
+
+
+// Flex
+@mixin flex {
+    display: flex;
+}
+
+@mixin flex-center {
+    align-items: center;
+    align-content: center;
+    justify-content: center
+}
+
+@mixin flex-row {
+    @include flex;
+    flex-direction: row;
+}
+
+@mixin flex-column {
+    @include flex;
+    flex-direction: column;
+}
+
+@mixin flex-center-row {
+    @include flex-row;
+    @include flex-center;
+}
+
+@mixin flex-center-column {
+    @include flex-column;
+    @include flex-center;
+}
+// Flex SON
