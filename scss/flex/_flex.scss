@@ -13,6 +13,7 @@ $break-point: laptop;
     > .__kolon,
     > .__satir{
         flex-grow: 1;
+        /* height: fit-content; */
         @include padding(1rem 2rem);
     }
 }
@@ -24,7 +25,21 @@ $break-point: laptop;
         @include flex-column;
     }
 
+    > .__kolon{
+        flex-basis: 10em;
+        background-color: yellow;
+
+        @include break-point($break-point){
+            flex-basis: auto;
+        }
+    }
+
     &.--orta{
+        
+        & * {
+            text-align: center
+        }
+
         > .__kolon{
             @include flex-center-column;
 
