@@ -1,4 +1,16 @@
 // Break Point
+
+// Ayarlar
+$prefix: px;
+
+// Hazır ayarlar
+$points: (
+    "pc": 1200,
+    "laptop": 992,
+    "tablet": 769,
+    "telefon": 600
+);
+
 @mixin break-point($veri, $tip: max) {
     $veri-tipi: type-of($veri);
     $break-point: null;
@@ -74,6 +86,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+@mixin text-truncate() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 // Genel SON
 
