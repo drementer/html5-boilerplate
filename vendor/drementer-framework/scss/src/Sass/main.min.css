@@ -1,0 +1,235 @@
+@import url(https://fonts.googleapis.com/css?family=Fira+Code:300,regular,500,600,700);
+html,
+body,
+p,
+ol,
+ul,
+li,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-weight: normal;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 1rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+* {
+  font-family: "Fira Code";
+}
+
+div.no-js {
+  font-size: 1rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1em;
+  background-color: #f9faff;
+  margin: 2em auto 1em;
+  width: clamp(10em, calc(100% - 2em), 50em);
+  display: flex;
+  align-content: stretch;
+}
+div.no-js .__ikon {
+  width: 7em;
+  background-color: #6922ee;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  border-radius: 10px 0 0 10px;
+}
+div.no-js .__ikon img {
+  width: 100%;
+}
+@media screen and (max-width: 769px) {
+  div.no-js .__ikon {
+    display: none;
+  }
+}
+div.no-js .__icerik {
+  padding: 1rem calc(1.275rem + 0.3vw);
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 1200px) {
+  div.no-js .__icerik {
+    padding: 1rem 1.5rem;
+  }
+}
+div.no-js .__icerik p {
+  font-size: 16px;
+  font-size: 1em;
+  text-indent: 0.6em;
+  color: #130022;
+}
+@media screen and (max-width: 992px) {
+  div.no-js {
+    font-size: 14px;
+    font-size: 0.875em;
+  }
+}
+@media screen and (max-width: 769px) {
+  div.no-js {
+    border-left: 3px solid #6922ee;
+    margin: 2em 1em 1em;
+  }
+}
+
+.--kart {
+  font-size: 1em;
+  width: 18em;
+  height: 28em;
+  margin: 1em;
+}
+@media screen and (max-width: 600px) {
+  .--kart {
+    width: 100%;
+  }
+}
+.--kart > .__gorsel {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.kolonlar,
+.satirlar {
+  font-size: 1em;
+  width: 100%;
+  justify-content: stretch;
+  padding: 1rem calc(1.325rem + 0.9vw);
+  gap: 1em;
+  flex-wrap: wrap;
+}
+@media (min-width: 1200px) {
+  .kolonlar,
+.satirlar {
+    padding: 1rem 2rem;
+  }
+}
+.kolonlar > .__kolon,
+.kolonlar > .__satir,
+.satirlar > .__kolon,
+.satirlar > .__satir {
+  flex-grow: 1;
+  /* height: fit-content; */
+  padding: 1rem calc(1.325rem + 0.9vw);
+}
+@media (min-width: 1200px) {
+  .kolonlar > .__kolon,
+.kolonlar > .__satir,
+.satirlar > .__kolon,
+.satirlar > .__satir {
+    padding: 1rem 2rem;
+  }
+}
+
+.kolonlar {
+  display: flex;
+  flex-direction: row;
+}
+@media screen and (max-width: 992px) {
+  .kolonlar {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.kolonlar > .__kolon {
+  flex-basis: 10em;
+  background-color: yellow;
+}
+@media screen and (max-width: 992px) {
+  .kolonlar > .__kolon {
+    flex-basis: auto;
+  }
+}
+.kolonlar.--orta * {
+  text-align: center;
+}
+.kolonlar.--orta > .__kolon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+@media screen and (max-width: 992px) {
+  .kolonlar.--orta > .__kolon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+}
+
+.satirlar {
+  display: flex;
+  flex-direction: column;
+}
+.satirlar.--orta > .__satir {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 992px) {
+  html {
+    font-size: 0.875rem;
+  }
+}/*# sourceMappingURL=main.min.css.map */

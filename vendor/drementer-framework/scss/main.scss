@@ -1,17 +1,19 @@
 @charset "utf-8";
 
-
 /////////////////////////////////////
-// Framework
+// Use
 
-@import "../vendor/drementer-framework/scss/main";
+@use "sass:meta";
 /////////////////////////////////////
 
 
 /////////////////////////////////////
 // İmport
 
-@import
+@import 
+
+    // Vendors
+    "vendors/all",
 
     // Utils
     "utils/all",
@@ -21,6 +23,9 @@
 
     // Components
     "components/all",
+
+    // Flex
+    "flex/all",
 
     // Layouts
     "layouts/all",

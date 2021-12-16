@@ -1,0 +1,5 @@
+html{
+    @include break-point(laptop){
+        @include font-size(14px);
+    }
+}

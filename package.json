@@ -19,8 +19,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/drementer/html-dosya-yapim/issues"
-  },
-  "dependencies": {
-    "rfs": "^9.0.6"
   }
 }
