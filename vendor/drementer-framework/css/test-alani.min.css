@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Fira+Code:300,regular,500,600,700);
+@import url("https://fonts.googleapis.com/css?family=Fira+Code:300,regular,500,600,700");
 html,
 body,
 p,
@@ -71,7 +71,6 @@ img {
 }
 
 div.no-js {
-  font-size: 1rem;
   position: -webkit-sticky;
   position: sticky;
   top: 1em;
@@ -148,7 +147,6 @@ div.no-js .__icerik p {
 
 .kolonlar,
 .satirlar {
-  font-size: 1em;
   width: 100%;
   justify-content: stretch;
   padding: 1rem calc(1.325rem + 0.9vw);
