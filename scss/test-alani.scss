@@ -1,0 +1,36 @@
+@import 
+    "main"
+;
+main.test{
+
+    h1,
+    h2{
+        margin: 1em 2em;
+        @include font-size(2rem);
+        @include margin-left(4rem);
+
+        &::after{
+            content: '🠗';
+            margin: .5em .5em 0;
+            display: block;
+        }
+    }
+
+    h2{
+        @include font-size(1.5rem);
+        @include margin-left(6rem);
+
+        &::after{
+            margin-left: 1em;
+        }
+    }
+
+    .kolonlar-satirlar{
+        
+        .kolonlar > * ,
+        .satirlar > *{
+            background-color: $mor;
+            color: $beyaz;
+        }
+    }
+}
