@@ -1,4 +1,86 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Code:300,regular,500,600,700");
+.kolonlar,
+.satirlar {
+  width: 100%;
+  justify-content: stretch;
+  padding: 1rem calc(1.325rem + 0.9vw);
+  gap: 1em;
+  flex-wrap: wrap;
+}
+@media (min-width: 1200px) {
+  .kolonlar,
+.satirlar {
+    padding: 1rem 2rem;
+  }
+}
+.kolonlar > .__kolon,
+.kolonlar > .__satir,
+.satirlar > .__kolon,
+.satirlar > .__satir {
+  flex-grow: 1;
+  /* height: fit-content; */
+  padding: 1rem calc(1.325rem + 0.9vw);
+}
+@media (min-width: 1200px) {
+  .kolonlar > .__kolon,
+.kolonlar > .__satir,
+.satirlar > .__kolon,
+.satirlar > .__satir {
+    padding: 1rem 2rem;
+  }
+}
+
+.kolonlar {
+  display: flex;
+  flex-direction: row;
+}
+@media screen and (max-width: 992px) {
+  .kolonlar {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.kolonlar > .__kolon {
+  flex-basis: 10em;
+  background-color: yellow;
+}
+@media screen and (max-width: 992px) {
+  .kolonlar > .__kolon {
+    flex-basis: auto;
+  }
+}
+.kolonlar.--orta * {
+  text-align: center;
+}
+.kolonlar.--orta > .__kolon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+@media screen and (max-width: 992px) {
+  .kolonlar.--orta > .__kolon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+}
+
+.satirlar {
+  display: flex;
+  flex-direction: column;
+}
+.satirlar.--orta > .__satir {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
 html,
 body,
 p,
@@ -144,90 +226,16 @@ div.no-js .__icerik p {
   background-position: center;
 }
 
-.kolonlar,
-.satirlar {
-  width: 100%;
-  justify-content: stretch;
-  padding: 1rem calc(1.325rem + 0.9vw);
-  gap: 1em;
-  flex-wrap: wrap;
-}
-@media (min-width: 1200px) {
-  .kolonlar,
-.satirlar {
-    padding: 1rem 2rem;
-  }
-}
-.kolonlar > .__kolon,
-.kolonlar > .__satir,
-.satirlar > .__kolon,
-.satirlar > .__satir {
-  flex-grow: 1;
-  /* height: fit-content; */
-  padding: 1rem calc(1.325rem + 0.9vw);
-}
-@media (min-width: 1200px) {
-  .kolonlar > .__kolon,
-.kolonlar > .__satir,
-.satirlar > .__kolon,
-.satirlar > .__satir {
-    padding: 1rem 2rem;
-  }
-}
-
-.kolonlar {
-  display: flex;
-  flex-direction: row;
-}
-@media screen and (max-width: 992px) {
-  .kolonlar {
-    display: flex;
-    flex-direction: column;
-  }
-}
-.kolonlar > .__kolon {
-  flex-basis: 10em;
-  background-color: yellow;
-}
-@media screen and (max-width: 992px) {
-  .kolonlar > .__kolon {
-    flex-basis: auto;
-  }
-}
-.kolonlar.--orta * {
-  text-align: center;
-}
-.kolonlar.--orta > .__kolon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-}
-@media screen and (max-width: 992px) {
-  .kolonlar.--orta > .__kolon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-  }
-}
-
-.satirlar {
-  display: flex;
-  flex-direction: column;
-}
-.satirlar.--orta > .__satir {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-}
-
 @media screen and (max-width: 992px) {
   html {
     font-size: 0.875rem;
   }
+}
+
+.--kapali {
+  display: none;
+}
+
+.--acik {
+  display: initial;
 }/*# sourceMappingURL=main.min.css.map */
