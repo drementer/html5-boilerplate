@@ -1,5 +1,5 @@
 // Ayarlar
-$break-point: laptop;
+$media: laptop;
 
 .kolonlar,
 .satirlar{
@@ -20,7 +20,7 @@ $break-point: laptop;
 .kolonlar{
     @include flex-row;
 
-    @include break-point($break-point){
+    @include media($media){
         @include flex-column;
     }
 
@@ -28,7 +28,7 @@ $break-point: laptop;
         flex-basis: 10em;
         background-color: yellow;
 
-        @include break-point($break-point){
+        @include media($media){
             flex-basis: auto;
         }
     }
@@ -42,7 +42,7 @@ $break-point: laptop;
         > .__kolon{
             @include flex-center-column;
 
-            @include break-point($break-point){
+            @include media($media){
                 @include flex-center-column;
             }
         }
