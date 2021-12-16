@@ -1,8 +1,7 @@
-.kart{
+.--kart{
     font-size: 1em;
     width: 18em;
     height: 28em;
-    background-color: yellow;
     margin: 1em;
 
     @include break-point(telefon){
