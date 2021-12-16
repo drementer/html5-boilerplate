@@ -4,7 +4,8 @@
 main.test{
 
     h1,
-    h2{
+    h2,
+    h3{
         margin: 1em 2em;
         @include font-size(2rem);
         @include margin-left(4rem);
@@ -22,6 +23,19 @@ main.test{
 
         &::after{
             margin-left: 1em;
+        }
+    }
+
+    h3{
+        @include font-size(1.3rem);
+        @include margin-left(9rem);
+
+        &::after{
+            content: "";
+        }
+
+        @include break-point(laptop){
+            display: none;
         }
     }
 

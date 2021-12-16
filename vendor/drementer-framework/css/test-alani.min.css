@@ -236,25 +236,29 @@ div.no-js .__icerik p {
 }
 
 main.test h1,
-main.test h2 {
+main.test h2,
+main.test h3 {
   margin: 1em 2em;
   font-size: calc(1.325rem + 0.9vw);
   margin-left: calc(1.525rem + 3.3vw);
 }
 @media (min-width: 1200px) {
   main.test h1,
-main.test h2 {
+main.test h2,
+main.test h3 {
     font-size: 2rem;
   }
 }
 @media (min-width: 1200px) {
   main.test h1,
-main.test h2 {
+main.test h2,
+main.test h3 {
     margin-left: 4rem;
   }
 }
 main.test h1::after,
-main.test h2::after {
+main.test h2::after,
+main.test h3::after {
   content: "🠗";
   margin: 0.5em 0.5em 0;
   display: block;
@@ -275,6 +279,28 @@ main.test h2 {
 }
 main.test h2::after {
   margin-left: 1em;
+}
+main.test h3 {
+  font-size: calc(1.255rem + 0.06vw);
+  margin-left: calc(2.025rem + 9.3vw);
+}
+@media (min-width: 1200px) {
+  main.test h3 {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 1200px) {
+  main.test h3 {
+    margin-left: 9rem;
+  }
+}
+main.test h3::after {
+  content: "";
+}
+@media screen and (max-width: 992px) {
+  main.test h3 {
+    display: none;
+  }
 }
 main.test .kolonlar-satirlar .kolonlar > *,
 main.test .kolonlar-satirlar .satirlar > * {
