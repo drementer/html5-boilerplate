@@ -1,7 +1,3 @@
-body{
-    overflow-x: hidden;
-}
-
 // Blocks
 html,
 body,
@@ -52,6 +48,12 @@ textarea{
 // Box sizing
 html{
     box-sizing: border-box;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
 }
 
 *{
