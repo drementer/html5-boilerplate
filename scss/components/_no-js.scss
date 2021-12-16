@@ -28,7 +28,7 @@ div.no-js{
     }
 
     .__icerik{
-        padding: 1em 1.5em;
+        @include padding(1rem 1.5rem);
         display: flex;
         align-items: center;
 
