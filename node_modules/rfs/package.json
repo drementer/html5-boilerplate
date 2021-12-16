@@ -1,0 +1,96 @@
+{
+  "name": "rfs",
+  "version": "9.0.6",
+  "main": "postcss.js",
+  "description": "Powerful & easy-to-use responsive resizing engine.",
+  "author": "Martijn Cuppens <martijn.cuppens@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twbs/rfs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/twbs/rfs/issues"
+  },
+  "homepage": "https://github.com/twbs/rfs#readme",
+  "files": [
+    "lib/",
+    "less.less",
+    "postcss.js",
+    "sass.sass",
+    "scss.scss",
+    "stylus.styl"
+  ],
+  "keywords": [
+    "rfs",
+    "fluid",
+    "responsive",
+    "font-size",
+    "typography",
+    "mixin",
+    "scss",
+    "sass",
+    "less",
+    "stylus",
+    "postcss"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "mocha": "mocha",
+    "stylelint": "stylelint \"**/*.{less,scss}\" --cache --cache-location node_modules/.cache/stylelint",
+    "xo": "xo",
+    "lint": "npm-run-all --parallel --aggregate-output --continue-on-error xo stylelint",
+    "test": "npm run lint && npm run mocha",
+    "generate-test-results": "node-sass test/sass/ -o test/expected/ && prettier --write test/expected/*.css",
+    "examples": "npm-run-all --parallel --aggregate-output --continue-on-error gulp-examples node-examples",
+    "gulp-examples": "npm-run-all --parallel --aggregate-output --continue-on-error gulp-example-*",
+    "gulp-example-less": "gulp --gulpfile=examples/less/gulpfile.js",
+    "gulp-example-postcss": "gulp --gulpfile=examples/postcss/gulpfile.js",
+    "gulp-example-scss": "gulp --gulpfile=examples/scss/gulpfile.js",
+    "gulp-example-stylus": "gulp --gulpfile=examples/stylus/gulpfile.js",
+    "node-examples": "npm-run-all --parallel --aggregate-output --continue-on-error node-example-*",
+    "node-example-less": "node examples/less/index.js",
+    "node-example-postcss": "node examples/postcss/index.js",
+    "node-example-scss": "node examples/scss/index.js",
+    "node-example-stylus": "node examples/stylus/index.js"
+  },
+  "dependencies": {
+    "postcss-value-parser": "^4.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-less": "^5.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.1.1",
+    "gulp-stylus": "^2.7.0",
+    "less": "^4.1.1",
+    "less3": "npm:less@^3.13.1",
+    "mocha": "^7.2.0",
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^7.0.36",
+    "prettier": "^1.19.1",
+    "sass": "^1.39.0",
+    "stylelint": "^12.0.1",
+    "stylelint-config-standard": "^20.0.0",
+    "stylus": "^0.54.8",
+    "xo": "^0.25.4"
+  },
+  "mocha": {
+    "check-leaks": true,
+    "throw-deprecation": true,
+    "trace-deprecation": true,
+    "trace-warnings": true,
+    "use_strict": true
+  },
+  "xo": {
+    "space": true,
+    "rules": {
+      "ava/no-import-test-files": "off",
+      "import/extensions": "off",
+      "promise/prefer-await-to-then": "off"
+    }
+  }
+}
