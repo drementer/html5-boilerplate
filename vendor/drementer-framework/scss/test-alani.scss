@@ -1,50 +1,46 @@
-@import 
-    "main"
-;
-main.test{
-
+@import "main";
+main.test {
     h1,
     h2,
-    h3{
+    h3 {
         margin: 1em 2em;
         @include font-size(2rem);
         @include margin-left(4rem);
 
-        &::after{
-            content: '🠗';
-            margin: .5em .5em 0;
-            display: block;
+        &::after {
+        content: "🠗";
+        margin: 0.5em 0.5em 0;
+        display: block;
         }
     }
 
-    h2{
+    h2 {
         @include font-size(1.5rem);
         @include margin-left(6rem);
 
-        &::after{
-            margin-left: 1em;
+        &::after {
+        margin-left: 1em;
         }
     }
 
-    h3{
+    h3 {
         @include font-size(1.3rem);
         @include margin-left(9rem);
 
-        &::after{
-            content: "";
+        &::after {
+        content: "";
         }
 
-        @include break-point(laptop){
-            display: none;
+        @include media(laptop) {
+        display: none;
         }
     }
 
-    .kolonlar-satirlar{
-        
-        .kolonlar > * ,
-        .satirlar > *{
-            background-color: $mor;
-            color: $beyaz;
+    .kolonlar-satirlar {
+        .kolonlar > *,
+        .satirlar > * {
+        background-color: $mor;
+        color: $beyaz;
         }
     }
 }

@@ -11,7 +11,7 @@ $points: (
     "telefon": 600
 );
 
-@mixin break-point($veri, $tip: max) {
+@mixin media($veri, $tip: max) {
     $veri-tipi: type-of($veri);
     $break-point: null;
     

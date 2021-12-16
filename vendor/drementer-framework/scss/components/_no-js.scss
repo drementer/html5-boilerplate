@@ -21,7 +21,7 @@ div.no-js{
             width: 100%;
         }
 
-        @include break-point(tablet){
+        @include media(tablet){
             display: none;
         }
     }
@@ -38,11 +38,11 @@ div.no-js{
         }
     }
 
-    @include break-point(laptop){
+    @include media(laptop){
         @include fs(14);
     }
 
-    @include break-point(tablet){
+    @include media(tablet){
         border-left: 3px solid $no-js__border;
         margin: 2em 1em 1em;
     }
