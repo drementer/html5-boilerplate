@@ -1,0 +1,43 @@
+.kolonlar,
+.satirlar{
+    font-size: 1em;
+    width: 100%;
+    justify-content: stretch;
+    padding: 1em 2em;
+    gap: 1em;
+
+    > .__kolon,
+    > .__satir{
+        flex-grow: 1;
+        background-color: $mor;
+        padding: 1em 2em;
+    }
+}
+
+.kolonlar{
+    @include flex-row;
+
+    @include break-point(laptop){
+        @include flex-column;
+    }
+
+    &.--orta{
+        > .__kolon{
+            @include flex-center-column;
+
+            @include break-point(laptop){
+                @include flex-center-column;
+            }
+        }
+    }
+}
+
+.satirlar{
+    @include flex-column;
+
+    &.--orta{
+        > .__satir{
+            @include flex-center-row;
+        }
+    }
+}
