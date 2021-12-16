@@ -1,23 +1,26 @@
+// Ayarlar
+$break-point: laptop;
+
 .kolonlar,
 .satirlar{
     font-size: 1em;
     width: 100%;
     justify-content: stretch;
-    padding: 1em 2em;
+    @include padding(1rem 2rem);
     gap: 1em;
+    flex-wrap: wrap;
 
     > .__kolon,
     > .__satir{
         flex-grow: 1;
-        background-color: $mor;
-        padding: 1em 2em;
+        @include padding(1rem 2rem);
     }
 }
 
 .kolonlar{
     @include flex-row;
 
-    @include break-point(laptop){
+    @include break-point($break-point){
         @include flex-column;
     }
 
@@ -25,7 +28,7 @@
         > .__kolon{
             @include flex-center-column;
 
-            @include break-point(laptop){
+            @include break-point($break-point){
                 @include flex-center-column;
             }
         }
