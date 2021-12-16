@@ -7,7 +7,7 @@ export function scrool_ac(){
 }
 
 export function kart_arkaplan(){
-    var kart = document.getElementsByClassName("kart");
+    var kart = document.getElementsByClassName("--kart");
     for(let i = 0; i < kart.length; i++){
         let item = kart[i];
         let kart_gorsel = item.getElementsByClassName("__gorsel")[0];
