@@ -3,10 +3,9 @@
 .kolonlar,
 .satirlar {
   width: 100%;
-  justify-content: stretch;
   padding: 1rem calc(1.325rem + 0.9vw);
   gap: 1em;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 @media (min-width: 1200px) {
   .kolonlar,
@@ -14,19 +13,24 @@
     padding: 1rem 2rem;
   }
 }
-.kolonlar > .__kolon,
-.kolonlar > .__satir,
-.satirlar > .__kolon,
-.satirlar > .__satir {
+.kolonlar *,
+.satirlar * {
+  text-align: center;
+}
+.kolonlar > .__eleman,
+.satirlar > .__eleman {
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  flex-basis: 0;
   flex-grow: 1;
+  flex-shrink: 1;
   /* height: fit-content; */
   padding: 1rem calc(1.325rem + 0.9vw);
 }
 @media (min-width: 1200px) {
-  .kolonlar > .__kolon,
-.kolonlar > .__satir,
-.satirlar > .__kolon,
-.satirlar > .__satir {
+  .kolonlar > .__eleman,
+.satirlar > .__eleman {
     padding: 1rem 2rem;
   }
 }
@@ -41,40 +45,19 @@
     flex-direction: column;
   }
 }
-.kolonlar > .__kolon {
-  flex-basis: 10em;
-  background-color: yellow;
-}
-@media screen and (max-width: 992px) {
-  .kolonlar > .__kolon {
-    flex-basis: auto;
-  }
-}
-.kolonlar.--orta * {
-  text-align: center;
-}
-.kolonlar.--orta > .__kolon {
+.kolonlar.--orta > .__eleman {
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
   justify-content: center;
 }
-@media screen and (max-width: 992px) {
-  .kolonlar.--orta > .__kolon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-  }
-}
 
 .satirlar {
   display: flex;
   flex-direction: column;
 }
-.satirlar.--orta > .__satir {
+.satirlar.--orta > .__eleman {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -244,6 +227,7 @@ div.no-js .__icerik p {
 main.test h1,
 main.test h2,
 main.test h3 {
+  text-transform: capitalize;
   margin: 1em 2em;
   font-size: calc(1.325rem + 0.9vw);
   margin-left: calc(1.525rem + 3.3vw);
@@ -302,11 +286,6 @@ main.test h3 {
 }
 main.test h3::after {
   content: "";
-}
-@media screen and (max-width: 992px) {
-  main.test h3 {
-    display: none;
-  }
 }
 main.test .kolonlar-satirlar .kolonlar > *,
 main.test .kolonlar-satirlar .satirlar > * {
