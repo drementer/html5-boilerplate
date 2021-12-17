@@ -1,17 +1,35 @@
-.--kart {
+.kart {
     font-size: 1em;
     width: 18em;
     height: 28em;
     margin: 1em;
+    overflow: hidden;
 
     @include media(telefon) {
         width: 100%;
     }
 
+    &.--oval{
+        border-radius: 10px;
+    }
+
     > .__gorsel {
         width: 100%;
         height: 100%;
-
-        @include cover-background;
+        
+        &.--gorsel{
+            &-contain{
+                object-fit: contain;
+            }
+            &-cover{
+                object-fit: cover;
+            }
+            &-fill{
+                object-fit: fill;
+            }
+            &-scale-down{
+                object-fit: scale-down;
+            }
+        }
     }
 }
