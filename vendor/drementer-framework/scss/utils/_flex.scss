@@ -4,14 +4,19 @@ $media: laptop;
 .kolonlar,
 .satirlar{
     width: 100%;
-    justify-content: stretch;
     @include padding(1rem 2rem);
     gap: 1em;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 
-    > .__kolon,
-    > .__satir{
+    & * {
+        text-align: center ;
+    }
+
+    > .__eleman{
+        min-width: fit-content;
+        flex-basis: 0;
         flex-grow: 1;
+        flex-shrink: 1;
         /* height: fit-content; */
         @include padding(1rem 2rem);
     }
@@ -24,27 +29,9 @@ $media: laptop;
         @include flex-column;
     }
 
-    > .__kolon{
-        flex-basis: 10em;
-        background-color: yellow;
-
-        @include media($media){
-            flex-basis: auto;
-        }
-    }
-
     &.--orta{
-        
-        & * {
-            text-align: center
-        }
-
-        > .__kolon{
+        > .__eleman{
             @include flex-center-column;
-
-            @include media($media){
-                @include flex-center-column;
-            }
         }
     }
 }
@@ -53,7 +40,7 @@ $media: laptop;
     @include flex-column;
 
     &.--orta{
-        > .__satir{
+        > .__eleman{
             @include flex-center-row;
         }
     }

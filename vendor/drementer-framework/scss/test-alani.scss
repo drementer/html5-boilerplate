@@ -1,16 +1,17 @@
-@import "main";
+@import "main.scss";
 main.test {
     h1,
     h2,
     h3 {
+        text-transform: capitalize;
         margin: 1em 2em;
         @include font-size(2rem);
         @include margin-left(4rem);
 
         &::after {
-        content: "🠗";
-        margin: 0.5em 0.5em 0;
-        display: block;
+            content: "🠗";
+            margin: 0.5em 0.5em 0;
+            display: block;
         }
     }
 
@@ -19,7 +20,7 @@ main.test {
         @include margin-left(6rem);
 
         &::after {
-        margin-left: 1em;
+            margin-left: 1em;
         }
     }
 
@@ -30,17 +31,13 @@ main.test {
         &::after {
         content: "";
         }
-
-        @include media(laptop) {
-        display: none;
-        }
     }
 
     .kolonlar-satirlar {
         .kolonlar > *,
         .satirlar > * {
-        background-color: $mor;
-        color: $beyaz;
+            background-color: $mor;
+            color: $beyaz;
         }
     }
 }
