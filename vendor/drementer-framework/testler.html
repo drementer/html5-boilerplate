@@ -17,7 +17,7 @@
 <body>
 
     <main class="test">
-        <section class="kolonlar-satirlar">
+        <section class="kolonlar-satirlar --kapali">
             <h1>Flex Kolon Ve Satırlar</h1>
 
             <h3>kolonlar</h3>
@@ -57,180 +57,335 @@
         
         </section>
     
-        <section class="kartlar">
+        <section class="kartlar --kapali">
             <h1>Kartlar</h1>
             <div class="kolonlar --orta">
                 <div class="__eleman">
-                    <div class="--kart">
-                        <div class="__gorsel" data-ap="http://unsplash.it/400?gravity=center"></div>
-                    </div>
-                </div>
-                <div class="__eleman">
-                    <div class="--kart">
-                        <div class="__gorsel" data-ap="http://unsplash.it/400?gravity=center"></div>
-                    </div>
-                </div>
-                <div class="__eleman">
-                    <div class="--kart">
-                        <div class="__gorsel" data-ap="http://unsplash.it/400?gravity=center"></div>
-                    </div>
-                </div>
-                <div class="__eleman">
-                    <div class="--kart">
-                        <div class="__gorsel" data-ap="http://unsplash.it/400?gravity=center"></div>
-                    </div>
-                </div>
-                <div class="__eleman">
-                    <div class="--kart">
-                        <div class="__gorsel" data-ap="http://unsplash.it/400?gravity=center"></div>
+                    <div class="kart --oval">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
                     </div>
                 </div>
             </div>
         </section>
-    </main>
 
-    <pre>
-        <code class="language-scss">
-            // Break Point
-
-// Ayarlar
-$prefix: px;
-
-// Hazır ayarlar
-$points: (
-    "pc": 1200,
-    "laptop": 992,
-    "tablet": 769,
-    "telefon": 600
-);
-
-@mixin media($veri, $tip: max) {
-    $veri-tipi: type-of($veri);
-    $break-point: null;
-    
-    @if $veri-tipi == number{
-        @media screen and (#{$tip}-width: #{$veri}) {
-            @content;
-        }
-    }@else if $veri-tipi == string{
+        <section class="kodlar --kapali">
+            <pre>
+                <code class="language-scss">
+                    // Break Point
         
-        @each $deger, $index in $points{
-            @if $veri == $deger{
-                $break-point: $index;
+        // Ayarlar
+        $prefix: px;
+        
+        // Hazır ayarlar
+        $points: (
+            "pc": 1200,
+            "laptop": 992,
+            "tablet": 769,
+            "telefon": 600
+        );
+        
+        @mixin media($veri, $tip: max) {
+            $veri-tipi: type-of($veri);
+            $break-point: null;
+            
+            @if $veri-tipi == number{
+                @media screen and (#{$tip}-width: #{$veri}) {
+                    @content;
+                }
+            }@else if $veri-tipi == string{
+                
+                @each $deger, $index in $points{
+                    @if $veri == $deger{
+                        $break-point: $index;
+                    }
+                }
+                
+                @if $break-point != null {
+                    @media screen and (#{$tip}-width: #{$break-point}#{$prefix}) {
+                        @content;
+                    }
+                } @else {
+                    @warn "Hatalı breakpoint değeri";
+                    /* 
+                        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                        Hatalı breakpoint değeri 
+                        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    */
+                }
             }
         }
+        // Break Point SON
         
-        @if $break-point != null {
-            @media screen and (#{$tip}-width: #{$break-point}#{$prefix}) {
+        
+        // Tema
+        @mixin tema($tema: "default") {
+            $element: #{&};
+            @at-root html[data-theme=#{$tema}] #{$element} {
                 @content;
             }
-        } @else {
-            @warn "Hatalı breakpoint değeri";
-            /* 
-                !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                Hatalı breakpoint değeri 
-                !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            */
         }
-    }
-}
-// Break Point SON
+        // Tema SON
+        
+        
+        // Font Size
+        @mixin fs($size, $rem: 1) {
+            font-size: $size * 1px;
+            font-size: em-hesapla($size, $rem);
+        }
+        // Font Size SON
+        
+        
+        // Font Face
+        @mixin font-face($name, $file) {
+            @font-face {
+                font-family: "#{$name}";
+                src: url("../fonts/#{$file}.eot");
+                src: url("../fonts/#{$file}.eot?#iefix") format("embedded-opentype"),
+                url("../fonts/#{$file}.woff") format("woff"),
+                url("../fonts/#{$file}.ttf") format("truetype"),
+                url("../fonts/#{$file}.svg?#webfont") format("svg");
+            }
+        }
+        // Font Face SON
+        
+        
+        // Genel
+        @mixin ortala {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        @mixin cover-background {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        @mixin text-truncate() {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        // Genel SON
+        
+        
+        // Flex
+        @mixin flex {
+            display: flex;
+        }
+        
+        @mixin flex-center {
+            align-items: center;
+            align-content: center;
+            justify-content: center
+        }
+        
+        @mixin flex-row {
+            @include flex;
+            flex-direction: row;
+        }
+        
+        @mixin flex-column {
+            @include flex;
+            flex-direction: column;
+        }
+        
+        @mixin flex-center-row {
+            @include flex-row;
+            @include flex-center;
+        }
+        
+        @mixin flex-center-column {
+            @include flex-column;
+            @include flex-center;
+        }
+        // Flex SON
+                </code>
+            </pre>
+        
+            <pre>
+                <code class="language-html">
+                    <script>
+                        <div>dsadas</div>
+                    </script>
+                </code>
+            </pre>
+        </section>
 
+        <section class="devam-eden-kolonlar --kapali">
+            <div class="kolonlar --kolon-5 --orta">
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+                <div class="__eleman">
+                    <div class="kart">
+                        <img class="__gorsel --gorsel-cover" src="http://unsplash.it/900?gravity=center"></img>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-// Tema
-@mixin tema($tema: "default") {
-    $element: #{&};
-    @at-root html[data-theme=#{$tema}] #{$element} {
-        @content;
-    }
-}
-// Tema SON
-
-
-// Font Size
-@mixin fs($size, $rem: 1) {
-    font-size: $size * 1px;
-    font-size: em-hesapla($size, $rem);
-}
-// Font Size SON
-
-
-// Font Face
-@mixin font-face($name, $file) {
-    @font-face {
-        font-family: "#{$name}";
-        src: url("../fonts/#{$file}.eot");
-        src: url("../fonts/#{$file}.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/#{$file}.woff") format("woff"),
-        url("../fonts/#{$file}.ttf") format("truetype"),
-        url("../fonts/#{$file}.svg?#webfont") format("svg");
-    }
-}
-// Font Face SON
-
-
-// Genel
-@mixin ortala {
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-@mixin cover-background {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-@mixin text-truncate() {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-// Genel SON
-
-
-// Flex
-@mixin flex {
-    display: flex;
-}
-
-@mixin flex-center {
-    align-items: center;
-    align-content: center;
-    justify-content: center
-}
-
-@mixin flex-row {
-    @include flex;
-    flex-direction: row;
-}
-
-@mixin flex-column {
-    @include flex;
-    flex-direction: column;
-}
-
-@mixin flex-center-row {
-    @include flex-row;
-    @include flex-center;
-}
-
-@mixin flex-center-column {
-    @include flex-column;
-    @include flex-center;
-}
-// Flex SON
-        </code>
-    </pre>
-
-    <pre>
-        <code class="language-html">
-            <script>
-                <div>dsadas</div>
-            </script>
-        </code>
-    </pre>
-    
+        <section class="devam-eden-kolonlar --kapali">
+            <div class="kolonlar --kolon-7 --orta">
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+                <div class="__eleman">drementer</div>
+            </div>
+        </section>
+    </main>
 
     <!-- Js -->
     <script type="module" src="js/app.js"></script>

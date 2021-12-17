@@ -4,7 +4,7 @@ main.test {
     h2,
     h3 {
         text-transform: capitalize;
-        margin: 1em 2em;
+        @include margin(1rem 2rem);
         @include font-size(2rem);
         @include margin-left(4rem);
 
@@ -38,6 +38,31 @@ main.test {
         .satirlar > * {
             background-color: $mor;
             color: $beyaz;
+        }
+    }
+
+    .kart{
+        margin: 0;
+        background-color: red;
+    }
+
+    .kartlar{
+        .__eleman{
+            padding: 0;
+        }
+    }
+
+    .devam-eden-kolonlar{
+        max-height: 900px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        resize: horizontal;
+        max-width: 100%;
+
+        &:nth-last-of-type(1){
+            .__eleman{
+                background-color: $mor;
+            }
         }
     }
 }
