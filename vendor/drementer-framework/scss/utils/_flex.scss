@@ -8,8 +8,10 @@ $media: laptop;
     gap: 1em;
     flex-wrap: nowrap;
 
-    & * {
-        text-align: center ;
+    &.--orta{
+        & * {
+            text-align: center;
+        }
     }
 
     > .__eleman{
@@ -32,6 +34,23 @@ $media: laptop;
     &.--orta{
         > .__eleman{
             @include flex-center-column;
+        }
+    }
+    
+    @for $i from 1 to 8 {
+        &.--kolon-#{$i}{
+            column-width: calc(22em - #{$i} * 1em);
+            display: block;
+            column-gap: 1em;
+            column-count: #{$i};
+
+            > .__eleman{
+                @include margin(1rem 0);
+
+                &:first-child{
+                    margin-top: 0;
+                }
+            }
         }
     }
 }
