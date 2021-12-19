@@ -15,7 +15,6 @@ $media: laptop;
     }
 
     > .__eleman{
-        min-width: fit-content;
         flex-basis: 0;
         flex-grow: 1;
         flex-shrink: 1;
@@ -34,21 +33,27 @@ $media: laptop;
     &.--orta{
         > .__eleman{
             @include flex-center-column;
+            // inline flex olması gerek şuan saçma bir şkeilde
         }
     }
     
-    @for $i from 1 to 8 {
+    @for $i from 1 to 6 {
         &.--kolon-#{$i}{
-            column-width: calc(22em - #{$i} * 1em);
             display: block;
-            column-gap: 1em;
-            column-count: #{$i};
 
-            > .__eleman{
-                @include margin(1rem 0);
+            columns: calc(15em - #{$i} * 1em) #{$i};
 
-                &:first-child{
-                    margin-top: 0;
+            > *:not(p){
+                display: inline-block;
+                @include margin(.5rem 1rem 0 1rem);
+                width: 100%;
+                min-width: fit-content;
+            }
+
+            &.--kirilma{
+                > *{
+                    break-inside: avoid;
+                    page-break-inside: avoid;
                 }
             }
         }
