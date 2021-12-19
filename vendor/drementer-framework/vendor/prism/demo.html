@@ -5,30 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="prism.css">
+    <link rel="stylesheet" href="custom.css">
 </head>
 <body>
     <pre>
         <code class="language-scss">
-            h1{
+    h1{
+        color: red;
+
+        h2{
+            color: green;
+            
+            &--aktif{
                 color: red;
-
-                h2{
-                    color: green;
-
-                    &--aktif{
-                        color: red;
-                    }
-                }
             }
+        }
+    }
         </code>
     </pre>
 
     <pre>
         <code class="language-html">
-            <script>
-                <div>dsadas</div>
-            </script>
+    <script>
+    <div class="kart --oval">
+        <img src="http://unsplash.it/400?gravity=center" alt="gorsel" class="__gorsel" />
+    </div></script>
         </code>
     </pre>
     <script src="prism.js"></script>
