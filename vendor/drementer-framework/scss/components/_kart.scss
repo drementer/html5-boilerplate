@@ -1,9 +1,15 @@
 .kart {
     font-size: 1em;
-    width: 18em;
-    height: 28em;
+    max-width: 18em;
+    max-height: 28em;
     margin: 1em;
     overflow: hidden;
+    display: inline-block;
+
+    &.--kapla{
+        max-width: none;
+        max-height: none;
+    }
 
     @include media(telefon) {
         width: 100%;
