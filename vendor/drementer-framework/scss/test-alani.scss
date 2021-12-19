@@ -41,28 +41,12 @@ main.test {
         }
     }
 
-    .kart{
-        margin: 0;
-        background-color: red;
-    }
-
-    .kartlar{
-        .__eleman{
-            padding: 0;
-        }
-    }
-
     .devam-eden-kolonlar{
         max-height: 900px;
         overflow-x: hidden;
         overflow-y: scroll;
         resize: horizontal;
-        max-width: 100%;
-
-        &:nth-last-of-type(1){
-            .__eleman{
-                background-color: $mor;
-            }
-        }
+        width: 50%;
+        margin: auto;
     }
 }
