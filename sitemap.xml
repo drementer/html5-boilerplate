@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemap scheme="2.2" checksum="fd65d9f51640ed45c4cea1adeb48bc6d">
+  <title>drementer</title>
+  <version>1.0</version>
+  <link>https://drementer.slickplan.com/gr7igoq3m</link>
+  <pubDate>Mon, 20 Dec 2021 03:51:29 -0500</pubDate>
+  <logo type="image">152149</logo>
+  <settings>
+    <url>http://drementer.com</url>
+  </settings>
+  <meta>
+    <cells_ui user="347008">
+      <box_size>large</box_size>
+      <font_size>16px</font_size>
+    </cells_ui>
+  </meta>
+  <workflow>
+    <status color="#59bc6d" alias="complete" readonly="1">Complete</status>
+    <status color="#f5a623" alias="draft" readonly="0">Draft</status>
+    <status color="#e2e6f0" alias="~" readonly="0">Unassigned</status>
+  </workflow>
+  <section id="svgmainsection">
+    <options>
+      <template>horizontal</template>
+      <color_scheme>default</color_scheme>
+      <default_color>#fdfdfe</default_color>
+      <lines_color>#dadadb</lines_color>
+      <text_color>#404040</text_color>
+      <id>svgmainsection</id>
+    </options>
+    <cells>
+      <cell id="svgfkgi4z5ap7w84dto">
+        <order>1000</order>
+        <level>home</level>
+        <text>Home page</text>
+      </cell>
+    </cells>
+  </section>
+</sitemap>
