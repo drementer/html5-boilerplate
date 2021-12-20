@@ -40,7 +40,6 @@ $media: laptop;
     @for $i from 1 to 6 {
         &.--kolon-#{$i}{
             display: block;
-
             columns: calc(15em - #{$i} * 1em) #{$i};
 
             > *:not(p){
