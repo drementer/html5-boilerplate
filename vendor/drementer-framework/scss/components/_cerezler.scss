@@ -1,0 +1,78 @@
+div.cerezler{
+    z-index: 99;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: $no-js__arkaplan;
+    border-right: 3px solid $mor;
+
+    @include margin(2rem); 
+    @include padding(1rem 2rem); 
+    @include flex-row;
+    @include shadow;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 1em;
+
+    @include media(pc){
+        bottom: 1em;
+        right: 1em;
+        left: 1em;
+        margin: 0;
+        justify-content: center;
+        border-right: none;
+        border-top: 3px solid $mor;
+    }
+
+    .__tuslar{
+        @include flex-center-row;
+        flex-wrap: wrap;
+        gap: 1em;
+
+        .__tus{
+            border-radius: 5em;
+            background-color: $mor;
+            border: none;
+            outline: none;
+            @include padding(.5rem 2rem); 
+            color: $beyaz;
+            text-transform: capitalize;
+            @include font-size(1rem);
+            cursor: pointer;
+
+            &:hover{
+                transform: translateY(-5px);
+            }
+        }
+    }
+
+    .__icerik{
+        width: 100%;
+        max-width: 30em;
+        text-indent: .6em;
+        color: black;
+        text-decoration: none;
+        @include font-size(1rem);
+        @include margin(0 1rem); 
+        letter-spacing: .05em;
+
+        &::after{
+            content: attr(data-devam-yazi);
+            text-transform: capitalize;
+            display: inline-block;
+            color: $mor;
+            @include margin(.5rem 0);
+            line-height: 1;
+            border-bottom: 1px solid transparent;
+            text-indent: 0;
+        }
+
+        &:hover{
+
+            &::after{
+                border-bottom-color:$mor;
+            }
+        }
+    }
+}
