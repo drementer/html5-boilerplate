@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /vendor/
+
+Sitemap: http://drementer.com/sitemap.xml
