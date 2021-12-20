@@ -468,7 +468,6 @@ div.cerezler .__icerik:hover::after {
 }
 .__hero-slider .__yazi {
   display: inline-block;
-  height: inherit;
   text-align: center;
   width: calc(100%/7);
   min-width: 8em;
