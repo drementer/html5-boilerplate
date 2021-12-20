@@ -49,4 +49,15 @@ main.test {
         width: 50%;
         margin: auto;
     }
+
+    .kartlar{
+        .kart{
+            height: 30em;
+            width: 20em;
+        }
+    }
+}
+
+body{
+    min-height: 200vh;
 }
