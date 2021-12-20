@@ -1,11 +1,16 @@
 div.no-js{
-    position: sticky;
-    top: 1em;
+    position: fixed;
+    top: 0;
+    right: 0;
     background-color: $no-js__arkaplan;
-    margin: 2em auto 1em;
-    width: clamp(10em, calc(100% - 2em), 50em); 
+    border-right: 3px solid $no-js__border;
+    border-radius: 10px 0 0;
+    max-width: 50em;
 
-    display: flex;
+    @include margin(1rem 2rem);
+    @include shadow;
+    @include flex;
+
     align-content: stretch;
 
     .__ikon{
@@ -32,18 +37,23 @@ div.no-js{
         align-items: center;
 
         p{
-            @include fs(16);
+            @include font-size(1rem);
             text-indent: .6em;
             color: $no-js__yazi;
         }
     }
 
-    @include media(laptop){
-        @include fs(14);
+    @include media(pc){
+        border-right: none;
+        margin: 0;
+        border-top: 3px solid $no-js__border;
+        top: 1em;
+        left: 1em;
+        right: 1em;
+        max-width: none;
     }
 
     @include media(tablet){
-        border-left: 3px solid $no-js__border;
-        margin: 2em 1em 1em;
+        border-radius: 0;
     }
 }
