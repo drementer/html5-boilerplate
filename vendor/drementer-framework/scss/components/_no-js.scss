@@ -4,11 +4,10 @@ div.no-js{
     right: 0;
     background-color: $no-js__arkaplan;
     border-right: 3px solid $no-js__border;
-    border-radius: 10px 0 0;
     max-width: 50em;
 
     @include margin(1rem 2rem);
-    @include shadow;
+    @extend %golge;
     @include flex;
 
     align-content: stretch;
@@ -20,7 +19,6 @@ div.no-js{
         display: flex;
         justify-content: center;
         padding: 1em;
-        border-radius: 10px 0 0 10px;
 
         img{
             width: 100%;
