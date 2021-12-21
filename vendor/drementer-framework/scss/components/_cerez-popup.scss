@@ -1,4 +1,4 @@
-div.cerezler{
+#cerez-popup.cerez-popup{
     z-index: 99;
     position: fixed;
     bottom: 0;
@@ -9,7 +9,7 @@ div.cerezler{
     @include margin(2rem); 
     @include padding(1rem 2rem); 
     @include flex-row;
-    @include shadow;
+    @extend %golge;
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
@@ -35,9 +35,10 @@ div.cerezler{
             background-color: $mor;
             border: none;
             outline: none;
-            @include padding(.5rem 2rem); 
             color: $beyaz;
             text-transform: capitalize;
+            @extend %gecis;
+            @include padding(.5rem 2rem); 
             @include font-size(1rem);
             cursor: pointer;
 
@@ -50,22 +51,36 @@ div.cerezler{
     .__icerik{
         width: 100%;
         max-width: 30em;
-        text-indent: .6em;
         color: black;
         text-decoration: none;
         @include font-size(1rem);
         @include margin(0 1rem); 
-        letter-spacing: .05em;
+
+        @include media(tablet){
+            text-align: center;
+        }
+
+        p{
+            $satir: var(--satir-sayisi);
+            text-indent: .6em;
+            width: 100%;
+            @include text-truncate($satir);
+
+            @include media(laptop){
+                $satir: 10;
+                @include text-truncate($satir);
+            }
+        }
 
         &::after{
             content: attr(data-devam-yazi);
             text-transform: capitalize;
             display: inline-block;
+            @include padding(.1rem 0);
             color: $mor;
             @include margin(.5rem 0);
             line-height: 1;
             border-bottom: 1px solid transparent;
-            text-indent: 0;
         }
 
         &:hover{
