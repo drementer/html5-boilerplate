@@ -39,7 +39,65 @@ export function hero_slider(){
 /* Hero Slider oluşturucu SON */
 
 
+/* Çerezler */
+var cerez_ad = "cerez-politikasi";
+var cerez = localStorage.getItem(cerez_ad);
+var cerez_popup = document.getElementById("cerez-popup");
+var cerez_tuslar = cerez_popup.querySelectorAll(".__tuslar > .__tus");
+function cerez_tus_event(){
+    cerez_tuslar.forEach(tus => {
+        tus.addEventListener("click", function(){
+            if(tus.classList.contains("--kabul")){
+                cerez_kabul_et();
+                console.log("Çerez politikası kabul edildiği için Çerez Popup kapatıldı.");
+            }else{
+                cerez_popup__kapat();
+            }
+        })
+    })
+}
+
+function cerez_kontrol(){
+    /* console.log("Çerezler kontrol ediliyor..."); */
+    // Tarayıcı çerezlerinin aktif olup olmadığına bakıyor
+    if (window.localStorage) {
+
+        // Daha önce çerezin ayarlanıp ayarlanmadığına bakıyor
+        // Kullanıcı sayfayı ilk kez ziyaret ediyorsa
+        if (!cerez) {
+            // Çerez politikası henüz belirlenmemiş ayarlandı
+            localStorage.setItem(cerez_ad, 'belirlenmedi');
+        }
+        // Kullanıcı sayfayı tekrar ziyaret ediyorsa
+        else{
+            // Kullanıcı çerez politikasını kabul etmiş mi diye bakıyoruz
+            if(cerez == "kabul"){
+                // Eğerki daha önce kabul edildiyse Çerez Popup'ı kapatıyoruz
+                console.log("Çerez politikası daha önce kabul edildiği için Çerez Popup açılmadı.");
+                cerez_popup__kapat();
+            }
+        }
+    }else{
+        console.error("Taraycının çerez desteki kapalı, lütfen aktive edin!");
+    }
+}
+
+function cerez_kabul_et(){
+	localStorage.setItem(cerez_ad, 'kabul');
+	cerez_popup__kapat();
+}
+
+function cerez_popup__kapat(){
+	if(!cerez_popup.classList.contains("--kapali")){
+		cerez_popup.classList.add("--kapali");
+	}
+}
+/* Çerezler SON */
+
+
 // Girilen fonksiyonlar varsayılan olarak dışa atıldı
 export function app(){
     hero_slider();
+    cerez_kontrol();
+    cerez_tus_event();
 }
