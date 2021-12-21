@@ -26,6 +26,10 @@
         left: -30%;
         cursor: default;
         user-select: none;
+        animation-name: hero-animasyon;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
 
         @include media(tablet){
             width: fit-content;
@@ -34,23 +38,20 @@
         }
     }
 
-    &.--hero-animasyon{
+    &.--duraklat{
         .__yazi{
-            animation-name: hero-animasyon;
-            animation-duration: 6s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
+            animation-name:none;
         }
     }
 
-    &.--hero-animasyon.--ters{
+    &.--ters-yon{
         .__yazi{
             left: -10%;
-            animation-name: hero-animasyon--ters;
+            animation-name: hero-animasyon--ters-yon;
         }
     }
 
-    @keyframes hero-animasyon--ters {
+    @keyframes hero-animasyon--ters-yon {
         to{
             transform: translateX(-100%);
         }
