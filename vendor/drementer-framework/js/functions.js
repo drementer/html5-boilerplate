@@ -10,7 +10,7 @@ export function scrool_ac(){
 
 
 /* Hero Slider oluşturucu */
-export function hero_slider(){
+function hero_slider(){
     var hero_slider = document.querySelectorAll("div.__hero-slider");
     hero_slider.forEach(item => {
 
@@ -23,16 +23,22 @@ export function hero_slider(){
             yazi_sayisi = 5;
         }
 
-        // Component oluşturuluyor
+        // Yaziları kapsayacak div oluşturuldu
+        let hero_icerik = document.createElement("div");
+        hero_icerik.classList.add("__icerik");
+
+        // Yazilar için component oluşturuldu
         let yazi = document.createElement("div");
-        // Oluşturulan componente .__yazi class eklendi
         yazi.classList.add("__yazi");
-        // Oluşturulan componente ebeveyine girilen data-yazi attr si içerik olarak eklendi
         yazi.innerHTML = item.dataset.yazi;
-        // Ebeveyine girilen data-sayi attr kadar ebeveyine oluşturulan component eklendi
+
+        // Ebeveyine kapsayici eklendi
+        item.appendChild(hero_icerik);
+
+        // Kapsayıcıya istenilen miktarda yazi eklendi
         for(let i = 1; i<= yazi_sayisi; i++){
-            item.innerHTML += "";
-            item.appendChild(yazi);
+            hero_icerik.innerHTML += "";
+            hero_icerik.appendChild(yazi);
         }
     })
 }
