@@ -346,7 +346,7 @@ div.no-js .__icerik p {
   gap: 1em;
 }
 #cerez-popup.cerez-popup .__tuslar .__tus {
-  border-radius: 5em;
+  /* border-radius: 5em; */
   background-color: #5900ff;
   border: none;
   outline: none;
@@ -505,6 +505,14 @@ div.no-js .__icerik p {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-animation-name: hero-animasyon;
+          animation-name: hero-animasyon;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 @media screen and (max-width: 769px) {
   .__hero-slider .__yazi {
@@ -515,27 +523,21 @@ div.no-js .__icerik p {
     padding: 0 1rem;
   }
 }
-.__hero-slider.--hero-animasyon .__yazi {
-  -webkit-animation-name: hero-animasyon;
-          animation-name: hero-animasyon;
-  -webkit-animation-duration: 6s;
-          animation-duration: 6s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
+.__hero-slider.--duraklat .__yazi {
+  -webkit-animation-name: none;
+          animation-name: none;
 }
-.__hero-slider.--hero-animasyon.--ters .__yazi {
+.__hero-slider.--ters-yon .__yazi {
   left: -10%;
-  -webkit-animation-name: hero-animasyon--ters;
-          animation-name: hero-animasyon--ters;
+  -webkit-animation-name: hero-animasyon--ters-yon;
+          animation-name: hero-animasyon--ters-yon;
 }
-@-webkit-keyframes hero-animasyon--ters {
+@-webkit-keyframes hero-animasyon--ters-yon {
   to {
     transform: translateX(-100%);
   }
 }
-@keyframes hero-animasyon--ters {
+@keyframes hero-animasyon--ters-yon {
   to {
     transform: translateX(-100%);
   }
