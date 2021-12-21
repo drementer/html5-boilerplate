@@ -93,7 +93,10 @@ $points: (
     background-position: center;
 }
 
-@mixin text-truncate() {
+@mixin text-truncate($satir: 2) {
+    display: -webkit-box;
+    -webkit-line-clamp: $satir;
+    -webkit-box-orient: vertical; 
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
