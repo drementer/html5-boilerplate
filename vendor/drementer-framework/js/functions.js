@@ -15,7 +15,7 @@ function hero_slider(){
     hero_slider.forEach(item => {
 
         // Oluşturulacak alt eleman
-        let yazi_sayisi = item.dataset.sayi;
+        let yazi_sayisi = item.dataset.yaziSayi;
 
         // Minimum değerin altında giriş yapıldığında
         if(yazi_sayisi < 5 || yazi_sayisi == undefined){
