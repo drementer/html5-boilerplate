@@ -99,18 +99,6 @@ $points: (
     -webkit-box-orient: vertical; 
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
-    /* line-clamp: 1;
-    box-orient: vertical; */
-}
-
-@mixin shadow {
-    box-shadow:
-        4.5px 4.5px 3.6px rgba(0, 0, 0, 0.014),
-        12.5px 12.5px 10px rgba(0, 0, 0, 0.02),
-        30.1px 30.1px 24.1px rgba(0, 0, 0, 0.026),
-        100px 100px 80px rgba(0, 0, 0, 0.04)
-    ;
 }
 // Genel SON
 
