@@ -49,7 +49,7 @@ function hero_slider(){
 var cerez_ad = "cerez-politikasi";
 var cerez = localStorage.getItem(cerez_ad);
 var cerez_popup = document.getElementById("cerez-popup");
-var cerez_tuslar = cerez_popup.querySelectorAll(".__tuslar > .__tus");
+var cerez_tuslar = cerez_popup.querySelectorAll(".--butonlar > .--buton");
 function cerez_tus_event(){
     cerez_tuslar.forEach(tus => {
         tus.addEventListener("click", function(){
