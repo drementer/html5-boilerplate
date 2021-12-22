@@ -74,7 +74,7 @@ img {
   font-family: "Fira Code";
 }
 
-#cerez-popup.cerez-popup .__tuslar .__tus {
+#cerez-popup.cerez-popup .--butonlar .--buton {
   transition: all 200ms ease-in-out;
 }
 
@@ -241,6 +241,7 @@ div.no-js {
   background-color: #f9faff;
   border-right: 3px solid #6922ee;
   max-width: 50em;
+  z-index: 99;
   margin: 1rem calc(1.325rem + 0.9vw);
   display: flex;
   align-content: stretch;
@@ -335,32 +336,15 @@ div.no-js .__icerik p {
     border-top: 3px solid #5900ff;
   }
 }
-#cerez-popup.cerez-popup .__tuslar {
+#cerez-popup.cerez-popup .--butonlar {
   display: flex;
   flex-direction: row;
   align-items: center;
   align-content: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1em;
 }
-#cerez-popup.cerez-popup .__tuslar .__tus {
-  /* border-radius: 5em; */
-  background-color: #5900ff;
-  border: none;
-  outline: none;
-  color: #fff;
-  text-transform: capitalize;
-  padding: 0.5rem calc(1.325rem + 0.9vw);
-  font-size: 1rem;
-  cursor: pointer;
-}
-@media (min-width: 1200px) {
-  #cerez-popup.cerez-popup .__tuslar .__tus {
-    padding: 0.5rem 2rem;
-  }
-}
-#cerez-popup.cerez-popup .__tuslar .__tus:hover {
+#cerez-popup.cerez-popup .--butonlar .--buton:not(:last-child):hover {
   transform: translateY(-5px);
 }
 #cerez-popup.cerez-popup .__icerik {
@@ -369,7 +353,6 @@ div.no-js .__icerik p {
   color: black;
   text-decoration: none;
   font-size: 1rem;
-  margin: 0 1rem;
 }
 @media screen and (max-width: 769px) {
   #cerez-popup.cerez-popup .__icerik {
@@ -400,7 +383,7 @@ div.no-js .__icerik p {
   display: inline-block;
   padding: 0.1rem 0;
   color: #5900ff;
-  margin: 0.5rem 0;
+  margin-top: 0.5rem;
   line-height: 1;
   border-bottom: 1px solid transparent;
 }
@@ -550,6 +533,102 @@ div.no-js .__icerik p {
   to {
     transform: translateX(100%);
   }
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.modal .__arkaplan {
+  width: inherit;
+  height: inherit;
+  background-color: #00000062;
+  position: absolute;
+  z-index: -1;
+}
+.modal .--buton {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.modal .--buton ion-icon {
+  color: #5900ff;
+  font-size: calc(1.425rem + 2.1vw);
+}
+@media (min-width: 1200px) {
+  .modal .--buton ion-icon {
+    font-size: 3rem;
+  }
+}
+.modal.--gorsel-modal .__icerik > .__gorsel {
+  display: block;
+  max-height: calc(100vh - 2em);
+  width: 100%;
+}
+
+.--buton.--pasif, .--buton.--tip-2.--pasif, .--buton.--pasif.--hayalet {
+  --mor: #bd99ff;
+  cursor: not-allowed;
+}
+
+.--buton {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  display: inline-flex;
+  justify-content: center;
+  white-space: nowrap;
+  text-decoration: none;
+  text-transform: capitalize;
+  background-color: #5900ff;
+  outline: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.--buton.--tip-2, .--buton.--hayalet {
+  background-color: #fff;
+  border: 1px solid #5900ff;
+  color: #5900ff;
+}
+.--buton.--tip-2.--pasif, .--buton.--pasif.--hayalet {
+  border: 1px solid var(--mor);
+  color: var(--mor);
+  background-color: #fff;
+}
+.--buton.--tip-2:not(.--pasif):not(.--hayalet):hover, .--buton.--hayalet:not(.--pasif):not(.--hayalet):hover {
+  background-color: #5900ff;
+  color: #fff;
+}
+.--buton.--hayalet {
+  border: none;
+  background-color: transparent;
+}
+.--buton.--pasif {
+  background-color: var(--mor);
+}
+.--buton.--buyuk {
+  padding: 0.76rem 1.25rem;
+  font-size: 1.25rem;
+}
+.--buton.--aktif, .--buton:not(.--pasif):not(.--tip-2):not(.--buton.--hayalet):not(.--hayalet):hover {
+  background-color: #3e00b3;
+  color: #fff;
 }
 
 @media screen and (max-width: 992px) {

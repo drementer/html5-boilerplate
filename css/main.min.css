@@ -58,7 +58,6 @@ body {
 }
 
 * {
-  transition: all 200ms ease-in-out;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
 }
@@ -73,6 +72,14 @@ img {
 
 * {
   font-family: "Fira Code";
+}
+
+#cerez-popup.cerez-popup .--butonlar .--buton {
+  transition: all 200ms ease-in-out;
+}
+
+#cerez-popup.cerez-popup, div.no-js {
+  box-shadow: 4.5px 4.5px 3.6px rgba(0, 0, 0, 0.014), 12.5px 12.5px 10px rgba(0, 0, 0, 0.02), 30.1px 30.1px 24.1px rgba(0, 0, 0, 0.026), 100px 100px 80px rgba(0, 0, 0, 0.04);
 }
 
 .kolonlar,
@@ -233,10 +240,9 @@ div.no-js {
   right: 0;
   background-color: #f9faff;
   border-right: 3px solid #6922ee;
-  border-radius: 10px 0 0;
   max-width: 50em;
+  z-index: 99;
   margin: 1rem calc(1.325rem + 0.9vw);
-  box-shadow: 4.5px 4.5px 3.6px rgba(0, 0, 0, 0.014), 12.5px 12.5px 10px rgba(0, 0, 0, 0.02), 30.1px 30.1px 24.1px rgba(0, 0, 0, 0.026), 100px 100px 80px rgba(0, 0, 0, 0.04);
   display: flex;
   align-content: stretch;
 }
@@ -252,7 +258,6 @@ div.no-js .__ikon {
   display: flex;
   justify-content: center;
   padding: 1em;
-  border-radius: 10px 0 0 10px;
 }
 div.no-js .__ikon img {
   width: 100%;
@@ -294,7 +299,7 @@ div.no-js .__icerik p {
   }
 }
 
-div.cerezler {
+#cerez-popup.cerez-popup {
   z-index: 99;
   position: fixed;
   bottom: 0;
@@ -305,24 +310,23 @@ div.cerezler {
   padding: 1rem calc(1.325rem + 0.9vw);
   display: flex;
   flex-direction: row;
-  box-shadow: 4.5px 4.5px 3.6px rgba(0, 0, 0, 0.014), 12.5px 12.5px 10px rgba(0, 0, 0, 0.02), 30.1px 30.1px 24.1px rgba(0, 0, 0, 0.026), 100px 100px 80px rgba(0, 0, 0, 0.04);
   align-items: center;
   justify-content: flex-end;
   flex-wrap: wrap;
   gap: 1em;
 }
 @media (min-width: 1200px) {
-  div.cerezler {
+  #cerez-popup.cerez-popup {
     margin: 2rem;
   }
 }
 @media (min-width: 1200px) {
-  div.cerezler {
+  #cerez-popup.cerez-popup {
     padding: 1rem 2rem;
   }
 }
 @media screen and (max-width: 1200px) {
-  div.cerezler {
+  #cerez-popup.cerez-popup {
     bottom: 1em;
     right: 1em;
     left: 1em;
@@ -332,55 +336,58 @@ div.cerezler {
     border-top: 3px solid #5900ff;
   }
 }
-div.cerezler .__tuslar {
+#cerez-popup.cerez-popup .--butonlar {
   display: flex;
   flex-direction: row;
   align-items: center;
   align-content: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1em;
 }
-div.cerezler .__tuslar .__tus {
-  border-radius: 5em;
-  background-color: #5900ff;
-  border: none;
-  outline: none;
-  padding: 0.5rem calc(1.325rem + 0.9vw);
-  color: #fff;
-  text-transform: capitalize;
-  font-size: 1rem;
-  cursor: pointer;
-}
-@media (min-width: 1200px) {
-  div.cerezler .__tuslar .__tus {
-    padding: 0.5rem 2rem;
-  }
-}
-div.cerezler .__tuslar .__tus:hover {
+#cerez-popup.cerez-popup .--butonlar .--buton:not(:last-child):hover {
   transform: translateY(-5px);
 }
-div.cerezler .__icerik {
+#cerez-popup.cerez-popup .__icerik {
   width: 100%;
   max-width: 30em;
-  text-indent: 0.6em;
   color: black;
   text-decoration: none;
   font-size: 1rem;
-  margin: 0 1rem;
-  letter-spacing: 0.05em;
 }
-div.cerezler .__icerik::after {
+@media screen and (max-width: 769px) {
+  #cerez-popup.cerez-popup .__icerik {
+    text-align: center;
+  }
+}
+#cerez-popup.cerez-popup .__icerik p {
+  text-indent: 0.6em;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: var(--satir-sayisi);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media screen and (max-width: 992px) {
+  #cerez-popup.cerez-popup .__icerik p {
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+#cerez-popup.cerez-popup .__icerik::after {
   content: attr(data-devam-yazi);
   text-transform: capitalize;
   display: inline-block;
+  padding: 0.1rem 0;
   color: #5900ff;
-  margin: 0.5rem 0;
+  margin-top: 0.5rem;
   line-height: 1;
   border-bottom: 1px solid transparent;
-  text-indent: 0;
 }
-div.cerezler .__icerik:hover::after {
+#cerez-popup.cerez-popup .__icerik:hover::after {
   border-bottom-color: #5900ff;
 }
 
@@ -427,17 +434,10 @@ div.cerezler .__icerik:hover::after {
 
 .__hero-slider {
   font-size: calc(1.475rem + 2.7vw);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
   margin: calc(1.325rem + 0.9vw) 0;
   font-weight: 600;
-  width: 200vw;
+  width: 100%;
   overflow: hidden;
-  height: 2.1ch;
-  white-space: nowrap;
 }
 @media (min-width: 1200px) {
   .__hero-slider {
@@ -465,18 +465,36 @@ div.cerezler .__icerik:hover::after {
     margin-top: 3rem;
   }
 }
+.__hero-slider .__icerik {
+  width: 200vw;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  height: 2.1ch;
+}
 .__hero-slider .__yazi {
   display: inline-block;
   text-align: center;
   width: calc(100%/7);
   min-width: 8em;
   position: relative;
-  left: -40%;
+  left: -30%;
   cursor: default;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-animation-name: hero-animasyon;
+          animation-name: hero-animasyon;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 @media screen and (max-width: 769px) {
   .__hero-slider .__yazi {
@@ -487,27 +505,21 @@ div.cerezler .__icerik:hover::after {
     padding: 0 1rem;
   }
 }
-.__hero-slider.--hero-animasyon .__yazi {
-  -webkit-animation-name: hero-animasyon;
-          animation-name: hero-animasyon;
-  -webkit-animation-duration: 6s;
-          animation-duration: 6s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
+.__hero-slider.--duraklat .__yazi {
+  -webkit-animation-name: none;
+          animation-name: none;
 }
-.__hero-slider.--hero-animasyon.--ters .__yazi {
+.__hero-slider.--ters-yon .__yazi {
   left: -10%;
-  -webkit-animation-name: hero-animasyon--ters;
-          animation-name: hero-animasyon--ters;
+  -webkit-animation-name: hero-animasyon--ters-yon;
+          animation-name: hero-animasyon--ters-yon;
 }
-@-webkit-keyframes hero-animasyon--ters {
+@-webkit-keyframes hero-animasyon--ters-yon {
   to {
     transform: translateX(-100%);
   }
 }
-@keyframes hero-animasyon--ters {
+@keyframes hero-animasyon--ters-yon {
   to {
     transform: translateX(-100%);
   }
@@ -523,6 +535,102 @@ div.cerezler .__icerik:hover::after {
   }
 }
 
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.modal .__arkaplan {
+  width: inherit;
+  height: inherit;
+  background-color: #00000062;
+  position: absolute;
+  z-index: -1;
+}
+.modal .--buton {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.modal .--buton ion-icon {
+  color: #5900ff;
+  font-size: calc(1.425rem + 2.1vw);
+}
+@media (min-width: 1200px) {
+  .modal .--buton ion-icon {
+    font-size: 3rem;
+  }
+}
+.modal.--gorsel-modal .__icerik > .__gorsel {
+  display: block;
+  max-height: calc(100vh - 2em);
+  width: 100%;
+}
+
+.--buton.--pasif, .--buton.--tip-2.--pasif, .--buton.--pasif.--hayalet {
+  --mor: #bd99ff;
+  cursor: not-allowed;
+}
+
+.--buton {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  display: inline-flex;
+  justify-content: center;
+  white-space: nowrap;
+  text-decoration: none;
+  text-transform: capitalize;
+  background-color: #5900ff;
+  outline: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.--buton.--tip-2, .--buton.--hayalet {
+  background-color: #fff;
+  border: 1px solid #5900ff;
+  color: #5900ff;
+}
+.--buton.--tip-2.--pasif, .--buton.--pasif.--hayalet {
+  border: 1px solid var(--mor);
+  color: var(--mor);
+  background-color: #fff;
+}
+.--buton.--tip-2:not(.--pasif):not(.--hayalet):hover, .--buton.--hayalet:not(.--pasif):not(.--hayalet):hover {
+  background-color: #5900ff;
+  color: #fff;
+}
+.--buton.--hayalet {
+  border: none;
+  background-color: transparent;
+}
+.--buton.--pasif {
+  background-color: var(--mor);
+}
+.--buton.--buyuk {
+  padding: 0.76rem 1.25rem;
+  font-size: 1.25rem;
+}
+.--buton.--aktif, .--buton:not(.--pasif):not(.--tip-2):not(.--buton.--hayalet):not(.--hayalet):hover {
+  background-color: #3e00b3;
+  color: #fff;
+}
+
 @media screen and (max-width: 992px) {
   html {
     font-size: 0.875rem;
@@ -530,7 +638,7 @@ div.cerezler .__icerik:hover::after {
 }
 
 .--kapali {
-  display: none;
+  display: none !important;
 }
 
 .--acik {
