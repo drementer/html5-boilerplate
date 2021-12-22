@@ -2,5 +2,9 @@ $no-js__border: #6922ee;
 $no-js__arkaplan: #f9faff;
 $no-js__yazi: #130022;
 
+$modal-arkaplan: #00000062;
+
 $beyaz: #fff;
 $mor: #5900ff;
+$mor-pasif: lighten($mor, $amount: 30%);
+$mor-aktif: darken($mor, $amount: 15%);
