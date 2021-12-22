@@ -1,0 +1,39 @@
+.modal{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    @include flex-center-row;
+    @include padding(1rem);
+
+    .__arkaplan{
+        width: inherit;
+        height: inherit;
+        background-color: $modal-arkaplan;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .--buton{
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        ion-icon {
+            color: $mor;
+            @include font-size(3rem);
+        }
+    }
+
+    &.--gorsel-modal{
+        .__icerik{
+            > .__gorsel{
+                display: block;
+                max-height: calc(100vh - 2em);
+                width: 100%;
+            }
+        }
+    }
+}
