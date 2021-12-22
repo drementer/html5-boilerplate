@@ -5,6 +5,7 @@ div.no-js{
     background-color: $no-js__arkaplan;
     border-right: 3px solid $no-js__border;
     max-width: 50em;
+    z-index: 99;
 
     @include margin(1rem 2rem);
     @extend %golge;
