@@ -2,13 +2,14 @@
 main.test {
     h1,
     h2,
-    h3 {
+    h3,
+    h4 {
         text-transform: capitalize;
         @include margin(1rem 2rem);
         @include font-size(2rem);
         @include margin-left(4rem);
 
-        &::after {
+        &:not(h3):not(h4)::after {
             content: "🠗";
             margin: 0.5em 0.5em 0;
             display: block;
@@ -27,10 +28,13 @@ main.test {
     h3 {
         @include font-size(1.3rem);
         @include margin-left(9rem);
+    }
 
-        &::after {
-        content: "";
-        }
+    h4{
+        @include font-size(1.3rem);
+        @include padding(1rem);
+        @include margin-left(.5rem);
+        color: $mor;
     }
 
     .kolonlar-satirlar {
