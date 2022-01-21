@@ -6,5 +6,5 @@
 */
 
 import * as fonksiyon from './functions.js';
-
 fonksiyon.app();
+fonksiyon.hero_slider();
