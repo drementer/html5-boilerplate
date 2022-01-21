@@ -1,109 +1,113 @@
 /* Genel */
-export function scrool_kapat(){
-    document.querySelector("html, body").style.overflowY = "hidden";
-}
+export var scrool_kapat = () => {
+	document.querySelector("html, body").style.overflowY = "hidden";
+};
 
-export function scrool_ac(){
-    document.querySelector("html, body").style.overflowY = "auto";
-}
+export var scrool_ac = () => {
+	document.querySelector("html, body").style.overflowY = "auto";
+};
 /* Genel SON */
 
 
 /* Hero Slider oluşturucu */
-function hero_slider(){
-    var hero_slider = document.querySelectorAll("div.__hero-slider");
-    hero_slider.forEach(item => {
+export function hero_slider() {
+	var hero_slider = document.querySelectorAll("div.__hero-slider");
+	hero_slider.forEach((item) => {
+		// Oluşturulacak alt eleman
+		let yazi_sayisi = item.dataset.yaziSayi;
 
-        // Oluşturulacak alt eleman
-        let yazi_sayisi = item.dataset.yaziSayi;
+		// Minimum değerin altında giriş yapıldığında
+		if (yazi_sayisi < 5 || yazi_sayisi == undefined) {
+			console.warn(
+				"Hero Slider yazi sayisi minimum 5 olabilir, bu yüzden otomatik olarak 5 ayarlandı."
+			);
+			yazi_sayisi = 5;
+		}
 
-        // Minimum değerin altında giriş yapıldığında
-        if(yazi_sayisi < 5 || yazi_sayisi == undefined){
-            console.warn("Hero Slider yazi sayisi minimum 5 olabilir, bu yüzden otomatik olarak 5 ayarlandı.");
-            yazi_sayisi = 5;
-        }
+		// Yaziları kapsayacak div oluşturuldu
+		let hero_icerik = document.createElement("div");
+		hero_icerik.classList.add("__icerik");
 
-        // Yaziları kapsayacak div oluşturuldu
-        let hero_icerik = document.createElement("div");
-        hero_icerik.classList.add("__icerik");
+		// Yazilar için component oluşturuldu
+		let yazi = document.createElement("div");
+		yazi.classList.add("__yazi");
+		yazi.innerHTML = item.dataset.yazi;
 
-        // Yazilar için component oluşturuldu
-        let yazi = document.createElement("div");
-        yazi.classList.add("__yazi");
-        yazi.innerHTML = item.dataset.yazi;
+		// Ebeveyine kapsayici eklendi
+		item.appendChild(hero_icerik);
 
-        // Ebeveyine kapsayici eklendi
-        item.appendChild(hero_icerik);
-
-        // Kapsayıcıya istenilen miktarda yazi eklendi
-        for(let i = 1; i<= yazi_sayisi; i++){
-            hero_icerik.innerHTML += "";
-            hero_icerik.appendChild(yazi);
-        }
-    })
+		// Kapsayıcıya istenilen miktarda yazi eklendi
+		for (let i = 1; i <= yazi_sayisi; i++) {
+			hero_icerik.innerHTML += "";
+			hero_icerik.appendChild(yazi);
+		}
+	});
 }
 /* Hero Slider oluşturucu SON */
 
 
-/* Çerezler */
-var cerez_ad = "cerez-politikasi";
-var cerez = localStorage.getItem(cerez_ad);
-var cerez_popup = document.getElementById("cerez-popup");
-var cerez_tuslar = cerez_popup.querySelectorAll(".--butonlar > .--buton");
-function cerez_tus_event(){
-    cerez_tuslar.forEach(tus => {
-        tus.addEventListener("click", function(){
-            if(tus.classList.contains("--kabul")){
-                cerez_kabul_et();
-                console.log("Çerez politikası kabul edildiği için Çerez Popup kapatıldı.");
-            }else{
-                cerez_popup__kapat();
-            }
-        })
-    })
-}
+/* Çerez Politikası ve Popup */
 
-function cerez_kontrol(){
-    /* console.log("Çerezler kontrol ediliyor..."); */
-    // Tarayıcı çerezlerinin aktif olup olmadığına bakıyor
-    if (window.localStorage) {
+// Atamalar
+var cerez_politikasi__ad = "cerez-politikasi",
+	cerez_politikasi__deger = localStorage.getItem(cerez_politikasi__ad),
+	cerez_popup = document.getElementById("cerez-popup"),
+	cerez_popup__tuslar = cerez_popup.querySelectorAll(".__butonlar > .--buton");
 
-        // Daha önce çerezin ayarlanıp ayarlanmadığına bakıyor
-        // Kullanıcı sayfayı ilk kez ziyaret ediyorsa
-        if (!cerez) {
-            // Çerez politikası henüz belirlenmemiş ayarlandı
-            localStorage.setItem(cerez_ad, 'belirlenmedi');
-        }
-        // Kullanıcı sayfayı tekrar ziyaret ediyorsa
-        else{
-            // Kullanıcı çerez politikasını kabul etmiş mi diye bakıyoruz
-            if(cerez == "kabul"){
-                // Eğerki daha önce kabul edildiyse Çerez Popup'ı kapatıyoruz
-                console.log("Çerez politikası daha önce kabul edildiği için Çerez Popup açılmadı.");
-                cerez_popup__kapat();
-            }
-        }
-    }else{
-        console.error("Taraycının çerez desteki kapalı, lütfen aktive edin!");
-    }
-}
+// Çerez Popup tışlarına basıldığında ne olacağını belirler
+var cerez_popuo__tuslar_olay = () => {
+	cerez_popup__tuslar.forEach((tus) => {
+		tus.addEventListener("click", function () {
+			// Kabul ete basıldığında
+			if (tus.classList.contains("--kabul")) {
+				cerez_kabul_et();
+			}
+			// Daha sonra tuşuna basıldığında
+			else {
+				cerez_popup__kapat();
+			}
+		});
+	});
+};
 
-function cerez_kabul_et(){
-	localStorage.setItem(cerez_ad, 'kabul');
+// Cerez politikasının kabul edilip edilmediğini sorgular
+var cerez_politikasi_kontrol = () => {
+	// Tarayıcı çerezlerinin aktif olup olmadığına bakıyor
+	if (window.localStorage) {
+		if (cerez_politikasi__deger) {
+			if (cerez_politikasi__deger === "kabul") {
+				cerez_popup__kapat();
+			}
+		}
+	} else {
+		console.error("Taraycının çerez desteği kapalı, lütfen aktive edin!");
+	}
+};
+
+// Çerez politikası kabul edildiğinde olacak
+var cerez_kabul_et = () => {
+	localStorage.setItem(cerez_politikasi__ad, "kabul");
 	cerez_popup__kapat();
-}
+};
 
-function cerez_popup__kapat(){
-	if(!cerez_popup.classList.contains("--kapali")){
+// Çerez Popup'ı kapatır
+var cerez_popup__kapat = () => {
+	if (!cerez_popup.classList.contains("--kapali")) {
 		cerez_popup.classList.add("--kapali");
 	}
-}
-/* Çerezler SON */
+};
+
+// Çerez Popup olaylarını çalıştırır
+var cerez_popup__calistir = () => {
+	cerez_politikasi_kontrol();
+	cerez_popuo__tuslar_olay();
+};
+/* Çerez Politikası ve Popup SON */
 
 
-// Girilen fonksiyonlar varsayılan olarak dışa atıldı
-export function app(){
-    hero_slider();
-    cerez_kontrol();
-    cerez_tus_event();
+// Girilen fonksiyonları başlangıçta çalıştırmak üzere dışarı aktarır
+export var app = () => {
+	document.addEventListener("DOMContentLoaded", () => {
+		cerez_popup__calistir();
+	});
 }
