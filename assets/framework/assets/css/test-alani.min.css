@@ -73,6 +73,9 @@ img {
 
 * {
   font-family: "Fira Code";
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
 }
 
 #cerez-popup.cerez-popup .--butonlar .--buton {
