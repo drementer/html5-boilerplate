@@ -72,9 +72,12 @@ img {
 
 * {
   font-family: "Fira Code";
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
 }
 
-#cerez-popup.cerez-popup .--butonlar .--buton {
+#cerez-popup.cerez-popup .__butonlar .--buton {
   transition: all 200ms ease-in-out;
 }
 
@@ -336,7 +339,7 @@ div.no-js .__icerik p {
     border-top: 3px solid #5900ff;
   }
 }
-#cerez-popup.cerez-popup .--butonlar {
+#cerez-popup.cerez-popup .__butonlar {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -344,7 +347,7 @@ div.no-js .__icerik p {
   justify-content: center;
   flex-wrap: wrap;
 }
-#cerez-popup.cerez-popup .--butonlar .--buton:not(:last-child):hover {
+#cerez-popup.cerez-popup .__butonlar .--buton:not(:last-child):hover {
   transform: translateY(-5px);
 }
 #cerez-popup.cerez-popup .__icerik {
