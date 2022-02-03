@@ -4,7 +4,7 @@ Yeni projelere hızlı bir başlangıcın yanında SCSS kullanımını kolaylaş
 
 ## Menu
 
--   [Yükeleme](#yükleme)
+-   [Yükeleme](#hizli-baslangic)
 -   Canlı ön izleme
 -   Tam ekran modu
 -   Tüm platformlara destek
