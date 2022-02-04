@@ -1,8 +1,5 @@
 // Break Point
 
-// Ayarlar
-$prefix: px;
-
 // Hazır ayarlar
 $points: (
     "pc": 1200,
@@ -11,7 +8,7 @@ $points: (
     "telefon": 600
 );
 
-@mixin media($veri, $tip: max) {
+@mixin media($veri, $tip: max, $prefix: px) {
     $veri-tipi: type-of($veri);
     $break-point: null;
     
