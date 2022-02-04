@@ -756,4 +756,22 @@ main.test .kartlar .kart {
 
 body {
   min-height: 200vh;
+}
+
+div.background-test {
+  width: 500px;
+  height: 500px;
+  background-image: url("http://unsplash.it/700/400?random&gravity=center");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top left;
+  background-color: red;
+}
+@media screen and (max-width: 992px) {
+  div.background-test {
+    color: yellow;
+  }
+}
+html[data-theme=default] div.background-test a a a {
+  color: red;
 }/*# sourceMappingURL=test-alani.min.css.map */
