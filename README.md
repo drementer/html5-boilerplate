@@ -1,13 +1,13 @@
 # html-dosya-yapim
 
-Yeni projelere hızlı bir başlangıcın yanında SCSS kullanımını kolaylaştıran web geliştirme ortamı.
+Yeni projelere hızlı bir başlangıcın yanında [SCSS](https://sass-lang.com/) kullanımını kolaylaştıran web geliştirme ortamı.
 
 ## Menu
 
--   [Yükeleme](#hızlı-başlangıç)
--   Canlı ön izleme
--   Tam ekran modu
--   Tüm platformlara destek
+-   [Hızlı Başlangıç](#hızlı-başlangıç)
+-   [Kullanım/Örnekler](#Kullanım/Örnekler)
+-   [Geliştirici](#geliştirici)
+-   [Lisans](#lisans)
 
 ## Hızlı Başlangıç
 
@@ -18,3 +18,17 @@ Terminal kullanarak indir
 ```bash
   git clone https://github.com/drementer/html-dosya-yapim.git
 ```
+
+## Kullanım/Örnekler
+
+```javascript
+
+```
+
+## Geliştirici
+
+-   [@drementer](https://github.com/drementer)
+
+## Lisans
+
+[MIT](https://choosealicense.com/licenses/mit/)
