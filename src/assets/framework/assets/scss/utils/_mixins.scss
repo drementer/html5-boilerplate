@@ -1,4 +1,4 @@
-// Break Point
+/* Media */
 
 // Hazır ayarlar
 $points: (
@@ -30,28 +30,23 @@ $points: (
             }
         } @else {
             @warn "Hatalı breakpoint değeri";
-            /* 
-                !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                Hatalı breakpoint değeri 
-                !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            */
         }
     }
 }
-// Break Point SON
+/* Media SON */
 
 
-// Tema
+/* Tema */
 @mixin tema($tema: "default") {
     $element: #{&};
     @at-root html[data-theme=#{$tema}] #{$element} {
         @content;
     }
 }
-// Tema SON
+/* Tema SON */
 
 
-// Font Face
+/* Font Face */
 @mixin font-face($name, $file) {
     @font-face {
         font-family: "#{$name}";
@@ -62,10 +57,10 @@ $points: (
         url("../fonts/#{$file}.svg?#webfont") format("svg");
     }
 }
-// Font Face SON
+/* Font Face SON */
 
 
-// Genel
+/* Genel */
 @mixin background($url, $size: cover, $position: center, $repeat: no-repeat, $test: null) {
 	background-image: $url;
     background-repeat: $repeat;
@@ -83,10 +78,10 @@ $points: (
     overflow: hidden;
     text-overflow: ellipsis;
 }
-// Genel SON
+/* Genel SON */
 
 
-// Flex
+/* Flex */
 @mixin flex {
     display: flex;
 }
@@ -116,4 +111,4 @@ $points: (
     @include flex-column;
     @include flex-center;
 }
-// Flex SON
+/* Flex SON */
