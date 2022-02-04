@@ -51,14 +51,6 @@ $points: (
 // Tema SON
 
 
-// Font Size
-@mixin fs($size, $rem: 1) {
-    font-size: $size * 1px;
-    font-size: em-hesapla($size, $rem);
-}
-// Font Size SON
-
-
 // Font Face
 @mixin font-face($name, $file) {
     @font-face {
