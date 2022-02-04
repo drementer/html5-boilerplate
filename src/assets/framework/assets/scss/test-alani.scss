@@ -65,3 +65,23 @@ main.test {
 body{
     min-height: 200vh;
 }
+
+div.background-test{
+	width: 500px;
+	height: 500px;
+	$bg-image: url('http://unsplash.it/700/400?random&gravity=center');
+	@include background($bg-image,contain,top left,$test: red);
+
+	@include media(laptop){
+		color: yellow;
+	}
+	a{
+		a{
+			a{
+				@include tema(){
+					color: red;
+				}
+			}
+		}
+	}
+}
