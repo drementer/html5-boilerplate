@@ -77,16 +77,6 @@ $points: (
 
 
 // Genel
-@mixin ortala {
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-@mixin ortala-kapat {
-    left: auto;
-    transform: none;
-}
-
 @mixin background($url, $size: cover, $position: center, $repeat: no-repeat, $test: null) {
 	background-image: $url;
     background-repeat: $repeat;
