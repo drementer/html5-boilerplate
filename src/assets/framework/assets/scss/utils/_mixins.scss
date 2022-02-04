@@ -87,10 +87,14 @@ $points: (
     transform: none;
 }
 
-@mixin cover-background {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+@mixin background($url, $size: cover, $position: center, $repeat: no-repeat, $test: null) {
+	background-image: $url;
+    background-repeat: $repeat;
+    background-size: $size;
+    background-position: $position;
+	@if $test != null {
+		background-color: $test;
+	}
 }
 
 @mixin text-truncate($satir: 2) {
