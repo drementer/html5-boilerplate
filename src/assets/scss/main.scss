@@ -1,23 +1,31 @@
+/* 
+    by drementer
+    klncarslanburak@gmail.com
+    iletisim@drementer.com
+*/
+
 @charset "utf-8";
 
-
 /////////////////////////////////////
-// Framework
+// Use
 
-@import "../framework/assets/scss/drementer";
+@use "sass:meta";
 /////////////////////////////////////
 
 
 /////////////////////////////////////
 // İmport
 
-@import
+@import 
 
-    // Utils
-    "utils/all",
+    // Vendors
+    "vendor/all",
 
     // Base 
     "base/all",
+
+    // Utils
+    "utils/all",
 
     // Components
     "components/all",

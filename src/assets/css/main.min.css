@@ -1,9 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Fira+Code:300,regular,500,600,700");
+@charset "UTF-8";
 /* 
     by drementer
     klncarslanburak@gmail.com
     iletisim@drementer.com
 */
+/* Blocklar */
+@import url("https://fonts.googleapis.com/css?family=Fira+Code:300,regular,500,600,700");
 html,
 body,
 p,
@@ -27,6 +29,8 @@ h6 {
   padding: 0;
 }
 
+/* 	 */
+/* Başlıklar */
 h1,
 h2,
 h3,
@@ -36,10 +40,14 @@ h6 {
   font-weight: normal;
 }
 
+/*	 */
+/* Listeler */
 ul {
   list-style: none;
 }
 
+/* 	 */
+/* Form Elemanları */
 button,
 input,
 select,
@@ -47,6 +55,8 @@ textarea {
   font-weight: normal;
 }
 
+/* 	 */
+/* Genel */
 html {
   box-sizing: border-box;
   font-size: 1rem;
@@ -70,6 +80,7 @@ img {
   max-width: 100%;
 }
 
+/* 	 */
 * {
   font-family: "Fira Code";
   text-rendering: optimizeLegibility !important;
@@ -77,6 +88,16 @@ img {
   -moz-osx-font-smoothing: grayscale !important;
 }
 
+/* Media */
+/* Media SON */
+/* Tema */
+/* Tema SON */
+/* Font Face */
+/* Font Face SON */
+/* Genel */
+/* Genel SON */
+/* Flex */
+/* Flex SON */
 #cerez-popup.cerez-popup .__butonlar .--buton {
   transition: all 200ms ease-in-out;
 }
