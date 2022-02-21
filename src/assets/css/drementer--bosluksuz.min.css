@@ -3,8 +3,14 @@
     by drementer
     klncarslanburak@gmail.com
     iletisim@drementer.com
+
+	MIT LICENSE: (https://github.com/drementer/dred/blob/master/LICENSE)
+
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		_bosluklar.scss bu dosyaya dahil değil
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 */
-/* Blocklar */
+/* Reset */
 @import url("https://fonts.googleapis.com/css?family=Fira+Code:300,regular,500,600,700");
 html,
 body,
@@ -12,12 +18,16 @@ p,
 ol,
 ul,
 li,
+dl,
+dt,
+dd,
 blockquote,
 figure,
 fieldset,
 legend,
 textarea,
 pre,
+iframe,
 hr,
 h1,
 h2,
@@ -29,8 +39,6 @@ h6 {
   padding: 0;
 }
 
-/* 	 */
-/* Başlıklar */
 h1,
 h2,
 h3,
@@ -40,14 +48,10 @@ h6 {
   font-weight: normal;
 }
 
-/*	 */
-/* Listeler */
 ul {
   list-style: none;
 }
 
-/* 	 */
-/* Form Elemanları */
 button,
 input,
 select,
@@ -55,11 +59,9 @@ textarea {
   font-weight: normal;
 }
 
-/* 	 */
-/* Genel */
 html {
   box-sizing: border-box;
-  font-size: 1rem;
+  font-size: 16px;
   scroll-behavior: smooth;
 }
 
@@ -75,12 +77,28 @@ body {
   box-sizing: inherit;
 }
 
-img {
+img,
+video {
   height: auto;
   max-width: 100%;
 }
 
-/* 	 */
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+/* Reset SON */
+/* Typography */
 * {
   font-family: "Fira Code";
   text-rendering: optimizeLegibility !important;
@@ -88,16 +106,7 @@ img {
   -moz-osx-font-smoothing: grayscale !important;
 }
 
-/* Media */
-/* Media SON */
-/* Tema */
-/* Tema SON */
-/* Font Face */
-/* Font Face SON */
-/* Genel */
-/* Genel SON */
-/* Flex */
-/* Flex SON */
+/* Typography SON */
 #cerez-popup.cerez-popup .__butonlar .--buton {
   transition: all 200ms ease-in-out;
 }
@@ -106,17 +115,18 @@ img {
   box-shadow: 4.5px 4.5px 3.6px rgba(0, 0, 0, 0.014), 12.5px 12.5px 10px rgba(0, 0, 0, 0.02), 30.1px 30.1px 24.1px rgba(0, 0, 0, 0.026), 100px 100px 80px rgba(0, 0, 0, 0.04);
 }
 
+/* Flex */
 .kolonlar,
 .satirlar {
   width: 100%;
-  padding: 1rem calc(1.325rem + 0.9vw);
+  padding: 1rem 2rem;
   gap: 1em;
   flex-wrap: nowrap;
 }
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .kolonlar,
 .satirlar {
-    padding: 1rem 2rem;
+    padding: 1rem calc(1.325rem + 0.9vw);
   }
 }
 .kolonlar.--orta *,
@@ -129,12 +139,12 @@ img {
   flex-grow: 1;
   flex-shrink: 1;
   /* height: fit-content; */
-  padding: 1rem calc(1.325rem + 0.9vw);
+  padding: 1rem 2rem;
 }
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .kolonlar > .__eleman,
 .satirlar > .__eleman {
-    padding: 1rem 2rem;
+    padding: 1rem calc(1.325rem + 0.9vw);
   }
 }
 
@@ -258,26 +268,28 @@ img {
   justify-content: center;
 }
 
+/* Flex SON */
+/* No Js */
 div.no-js {
   position: fixed;
   top: 0;
   right: 0;
   background-color: #f9faff;
-  border-right: 3px solid #6922ee;
+  border-right: 3px solid #3e00b3;
   max-width: 50em;
   z-index: 99;
-  margin: 1rem calc(1.325rem + 0.9vw);
+  margin: 1rem 2rem;
   display: flex;
   align-content: stretch;
 }
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   div.no-js {
-    margin: 1rem 2rem;
+    margin: 1rem calc(1.325rem + 0.9vw);
   }
 }
 div.no-js .__ikon {
   width: 7em;
-  background-color: #6922ee;
+  background-color: #3e00b3;
   align-self: stretch;
   display: flex;
   justify-content: center;
@@ -286,19 +298,19 @@ div.no-js .__ikon {
 div.no-js .__ikon img {
   width: 100%;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 768px) {
   div.no-js .__ikon {
     display: none;
   }
 }
 div.no-js .__icerik {
-  padding: 1rem calc(1.275rem + 0.3vw);
+  padding: 1rem 1.5rem;
   display: flex;
   align-items: center;
 }
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   div.no-js .__icerik {
-    padding: 1rem 1.5rem;
+    padding: 1rem calc(1.275rem + 0.3vw);
   }
 }
 div.no-js .__icerik p {
@@ -310,19 +322,21 @@ div.no-js .__icerik p {
   div.no-js {
     border-right: none;
     margin: 0;
-    border-top: 3px solid #6922ee;
+    border-top: 3px solid #3e00b3;
     top: 1em;
     left: 1em;
     right: 1em;
     max-width: none;
   }
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 768px) {
   div.no-js {
     border-radius: 0;
   }
 }
 
+/* No Js SON */
+/* Çerez Popup */
 #cerez-popup.cerez-popup {
   z-index: 99;
   position: fixed;
@@ -330,8 +344,8 @@ div.no-js .__icerik p {
   right: 0;
   background-color: #f9faff;
   border-right: 3px solid #5900ff;
-  margin: calc(1.325rem + 0.9vw);
-  padding: 1rem calc(1.325rem + 0.9vw);
+  margin: 2rem;
+  padding: 1rem 2rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -339,14 +353,14 @@ div.no-js .__icerik p {
   flex-wrap: wrap;
   gap: 1em;
 }
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   #cerez-popup.cerez-popup {
-    margin: 2rem;
+    margin: calc(1.325rem + 0.9vw);
   }
 }
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   #cerez-popup.cerez-popup {
-    padding: 1rem 2rem;
+    padding: 1rem calc(1.325rem + 0.9vw);
   }
 }
 @media screen and (max-width: 1200px) {
@@ -378,7 +392,7 @@ div.no-js .__icerik p {
   text-decoration: none;
   font-size: 1rem;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 768px) {
   #cerez-popup.cerez-popup .__icerik {
     text-align: center;
   }
@@ -415,6 +429,8 @@ div.no-js .__icerik p {
   border-bottom-color: #5900ff;
 }
 
+/* Çerez Popup SON */
+/* Kart */
 .kart {
   font-size: 1em;
   max-width: 18em;
@@ -427,7 +443,7 @@ div.no-js .__icerik p {
   max-width: none;
   max-height: none;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 576px) {
   .kart {
     width: 100%;
   }
@@ -456,37 +472,39 @@ div.no-js .__icerik p {
      object-fit: scale-down;
 }
 
+/* Kart SON */
+/* Hero Slider */
 .__hero-slider {
-  font-size: calc(1.475rem + 2.7vw);
-  margin: calc(1.325rem + 0.9vw) 0;
+  font-size: 3.5rem;
+  margin: 2rem 0;
   font-weight: 600;
   width: 100%;
   overflow: hidden;
 }
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .__hero-slider {
-    font-size: 3.5rem;
+    font-size: calc(1.475rem + 2.7vw);
   }
 }
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .__hero-slider {
-    margin: 2rem 0;
+    margin: calc(1.325rem + 0.9vw) 0;
   }
 }
-@media screen and (max-width: 769px) {
-  .__hero-slider {
-    font-size: calc(1.375rem + 1.5vw);
-    margin-top: calc(1.425rem + 2.1vw);
-  }
-}
-@media screen and (max-width: 769px) and (min-width: 1200px) {
+@media screen and (max-width: 768px) {
   .__hero-slider {
     font-size: 2.5rem;
+    margin-top: 3rem;
   }
 }
-@media screen and (max-width: 769px) and (min-width: 1200px) {
+@media screen and (max-width: 768px) and (max-width: 1200px) {
   .__hero-slider {
-    margin-top: 3rem;
+    font-size: calc(1.375rem + 1.5vw);
+  }
+}
+@media screen and (max-width: 768px) and (max-width: 1200px) {
+  .__hero-slider {
+    margin-top: calc(1.425rem + 2.1vw);
   }
 }
 .__hero-slider .__icerik {
@@ -502,7 +520,7 @@ div.no-js .__icerik p {
 .__hero-slider .__yazi {
   display: inline-block;
   text-align: center;
-  width: calc(100%/7);
+  width: calc(100% / 7);
   min-width: 8em;
   position: relative;
   left: -30%;
@@ -520,7 +538,7 @@ div.no-js .__icerik p {
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 768px) {
   .__hero-slider .__yazi {
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -559,6 +577,8 @@ div.no-js .__icerik p {
   }
 }
 
+/* Hero Slider SON */
+/* Modal */
 .modal {
   width: 100%;
   height: 100%;
@@ -576,7 +596,7 @@ div.no-js .__icerik p {
 .modal .__arkaplan {
   width: inherit;
   height: inherit;
-  background-color: #00000062;
+  background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   z-index: -1;
 }
@@ -587,11 +607,11 @@ div.no-js .__icerik p {
 }
 .modal .--buton ion-icon {
   color: #5900ff;
-  font-size: calc(1.425rem + 2.1vw);
+  font-size: 3rem;
 }
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .modal .--buton ion-icon {
-    font-size: 3rem;
+    font-size: calc(1.425rem + 2.1vw);
   }
 }
 .modal.--gorsel-modal .__icerik > .__gorsel {
@@ -600,6 +620,8 @@ div.no-js .__icerik p {
   width: 100%;
 }
 
+/* Modal SON */
+/* Butonlar */
 .--buton.--pasif, .--buton.--tip-2.--pasif, .--buton.--pasif.--hayalet {
   --mor: #bd99ff;
   cursor: not-allowed;
@@ -618,7 +640,7 @@ div.no-js .__icerik p {
   background-color: #5900ff;
   outline: none;
   border: none;
-  color: #fff;
+  color: #ffffff;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -626,18 +648,18 @@ div.no-js .__icerik p {
           user-select: none;
 }
 .--buton.--tip-2, .--buton.--hayalet {
-  background-color: #fff;
+  background-color: #ffffff;
   border: 1px solid #5900ff;
   color: #5900ff;
 }
 .--buton.--tip-2.--pasif, .--buton.--pasif.--hayalet {
   border: 1px solid var(--mor);
   color: var(--mor);
-  background-color: #fff;
+  background-color: #ffffff;
 }
 .--buton.--tip-2:not(.--pasif):not(.--hayalet):hover, .--buton.--hayalet:not(.--pasif):not(.--hayalet):hover {
   background-color: #5900ff;
-  color: #fff;
+  color: #ffffff;
 }
 .--buton.--hayalet {
   border: none;
@@ -652,9 +674,11 @@ div.no-js .__icerik p {
 }
 .--buton.--aktif, .--buton:not(.--pasif):not(.--tip-2):not(.--buton.--hayalet):not(.--hayalet):hover {
   background-color: #3e00b3;
-  color: #fff;
+  color: #ffffff;
 }
 
+/* Butonlar SON */
+/* Base */
 @media screen and (max-width: 992px) {
   html {
     font-size: 0.875rem;
@@ -669,6 +693,4 @@ div.no-js .__icerik p {
   display: initial;
 }
 
-.--mx-auto {
-  margin: auto;
-}/*# sourceMappingURL=main.min.css.map */
+/* Base SON *//*# sourceMappingURL=drementer--bosluksuz.min.css.map */

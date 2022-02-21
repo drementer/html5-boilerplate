@@ -1,0 +1,38 @@
+/* 
+    by drementer
+    klncarslanburak@gmail.com
+    iletisim@drementer.com
+
+	MIT LICENSE: (https://github.com/drementer/dred/blob/master/LICENSE)
+
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		_bosluklar.scss bu dosyaya dahil değil
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+
+@charset "utf-8";
+
+/////////////////////////////////////
+// İmport
+
+@import 
+
+    // Vendors
+    "vendor/all",
+
+    // Base 
+    "base/all",
+
+    // Utils
+    "utils/all--bosluksuz",
+
+    // Components
+    "components/all",
+
+    // Layouts
+    "layouts/all",
+
+    // Themes
+    "themes/all"
+;
+/////////////////////////////////////

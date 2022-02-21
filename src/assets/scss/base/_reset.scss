@@ -1,16 +1,25 @@
-/* Blocklar */
+// minireset.css v0.0.6 | MIT License | (https://github.com/jgthms/minireset.css)
+// Projeye uyarladım
+
+/* Reset */
+
+// Blocklar
 html,
 body,
 p,
 ol,
 ul,
 li,
+dl,
+dt,
+dd,
 blockquote,
 figure,
 fieldset,
 legend,
 textarea,
 pre,
+iframe,
 hr,
 h1,
 h2,
@@ -21,10 +30,8 @@ h6 {
 	margin: 0;
 	padding: 0;
 }
-/* 	 */
 
-
-/* Başlıklar */
+// Başlıklar
 h1,
 h2,
 h3,
@@ -33,30 +40,24 @@ h5,
 h6 {
 	font-weight: normal;
 }
-/*	 */
 
-
-/* Listeler */
+// Listeler
 ul {
 	list-style: none;
 }
-/* 	 */
 
-
-/* Form Elemanları */
+// orm Elemanları
 button,
 input,
 select,
 textarea {
 	font-weight: normal;
 }
-/* 	 */
 
-
-/* Genel */
+// Genel
 html {
 	box-sizing: border-box;
-	@include font-size(16px);
+	font-size: 16px;
 	scroll-behavior: smooth;
 }
 
@@ -74,8 +75,23 @@ body {
 	}
 }
 
-img {
+img,
+video {
 	height: auto;
 	max-width: 100%;
 }
-/* 	 */
+
+iframe {
+	border: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td,
+th {
+	padding: 0;
+}
+/* Reset SON */

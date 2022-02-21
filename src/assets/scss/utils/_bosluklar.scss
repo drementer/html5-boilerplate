@@ -1,0 +1,208 @@
+// _spacing.scss => _bosluklar.scss
+
+// @Bulma & @Bootstrap kütüphanelerini
+// özellikle @Bulma.spacing.scss ve
+// @Bootstrap.rfs.scss ile harmanlayarak
+// projeme uyarladım.
+
+// LICENSE:
+// @Bootstrap: MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE),
+// @Bulma: MIT (https://github.com/jgthms/bulma/blob/master/LICENSE)
+
+/* Boşluklar */
+
+// Degerler
+$bosluk-isimleri: (
+	"margin": "m",
+	"padding": "p",
+);
+$bosluk-yonleri: (
+	"top": "t",
+	"right": "r",
+	"bottom": "b",
+	"left": "l",
+);
+$bosluk-degerleri: (
+	"0": 0,
+	"1": 0.25rem,
+	"2": 0.5rem,
+	"3": 0.75rem,
+	"4": 1rem,
+	"5": 1.25rem,
+	"6": 1.5rem,
+	"7": 1.75rem,
+	"8": 2rem,
+	"9": 2.5rem,
+	"10": 3rem,
+	"auto": auto,
+);
+$bosluk-hali: (
+	"pozitif": "",
+	"negatif": "n-",
+);
+
+/* Duyarlı Modlar */
+@each $isim, $deger in $boyutlar {
+	@include medya($isim) {
+		@each $bosluk-hali-isim, $bosluk-hali-deger in $bosluk-hali {
+			@each $bosluk-isimleri-isim,
+				$bosluk-isimleri-deger in $bosluk-isimleri
+			{
+				@each $bosluk-degerleri-isim,
+					$bosluk-degerleri-deger in $bosluk-degerleri
+				{
+					// responsive
+					// Negatif değerlere geçtiğinde
+					$negatif: $bosluk-hali-isim == "negatif";
+					@if $negatif {
+						// deger: 3rem => deger: -3rem
+						$bosluk-degerleri-deger: -$bosluk-degerleri-deger;
+					}
+
+					// Dışlanacak değerler
+					// p-auto, pt-auto
+					$padding-auto-kapat: not(
+						$bosluk-isimleri-isim ==
+							"padding" and
+							$bosluk-degerleri-isim ==
+							"auto"
+					);
+
+					// p-n4, pb-n3
+					$padding-negatif-kapat: not(
+						$negatif and $bosluk-isimleri-isim == "padding"
+					);
+
+					// mt-nauto, m-nauto
+					$negatif-auto-kapat: not(
+						$negatif and $bosluk-degerleri-isim == "auto"
+					);
+					/////////////////////
+
+					// Dışlanan değerler kontrol edilip işleve başlıyor
+					@if ($negatif-auto-kapat) and
+						($padding-negatif-kapat) and
+						($padding-auto-kapat)
+					{
+						// Tüm yönler
+						// Genel
+						.#{$bosluk-isimleri-deger}-#{$isim}-#{$bosluk-hali-deger}#{$bosluk-degerleri-isim} {
+							#{$bosluk-isimleri-isim}: #{$bosluk-degerleri-deger};
+						}
+
+						// Tum yonler
+						@each $bosluk-yonleri-isim,
+							$bosluk-yonleri-deger in $bosluk-yonleri
+						{
+							.#{$bosluk-isimleri-deger}#{$bosluk-yonleri-deger}-#{$isim}-#{$bosluk-hali-deger}#{$bosluk-degerleri-isim} {
+								#{$bosluk-isimleri-isim}-#{$bosluk-yonleri-isim}: #{$bosluk-degerleri-deger};
+							}
+						}
+
+						// Yataylar
+						.#{$bosluk-isimleri-deger}x-#{$bosluk-hali-deger}#{$isim}-#{$bosluk-degerleri-isim} {
+							#{$bosluk-isimleri-isim}-left: #{$bosluk-degerleri-deger};
+							#{$bosluk-isimleri-isim}-right: #{$bosluk-degerleri-deger};
+						}
+
+						// Dikeyler
+						.#{$bosluk-isimleri-deger}y-#{$bosluk-hali-deger}#{$isim}-#{$bosluk-degerleri-isim} {
+							#{$bosluk-isimleri-isim}-top: #{$bosluk-degerleri-deger};
+							#{$bosluk-isimleri-isim}-bottom: #{$bosluk-degerleri-deger};
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* Duyarlı modlar SON */
+
+/* Normal Modlar */
+// Ana hat
+@each $bosluk-hali-isim, $bosluk-hali-deger in $bosluk-hali {
+	@each $bosluk-isimleri-isim, $bosluk-isimleri-deger in $bosluk-isimleri {
+		@each $bosluk-degerleri-isim,
+			$bosluk-degerleri-deger in $bosluk-degerleri
+		{
+			// Negatif değerlere geçtiğinde
+			$negatif: $bosluk-hali-isim == "negatif";
+			@if $negatif {
+				// deger: 3rem => deger: -3rem
+				$bosluk-degerleri-deger: -$bosluk-degerleri-deger;
+			}
+
+			// Dışlanacak değerler
+			// p-auto, pt-auto
+			$padding-auto-kapat: not(
+				$bosluk-isimleri-isim ==
+					"padding" and
+					$bosluk-degerleri-isim ==
+					"auto"
+			);
+
+			// p-n4, pb-n3
+			$padding-negatif-kapat: not(
+				$negatif and $bosluk-isimleri-isim == "padding"
+			);
+
+			// mt-nauto, m-nauto
+			$negatif-auto-kapat: not(
+				$negatif and $bosluk-degerleri-isim == "auto"
+			);
+			/////////////////////
+
+			// Dışlanan değerler kontrol edilip işleve başlıyor
+			@if ($negatif-auto-kapat) and
+				($padding-negatif-kapat) and
+				($padding-auto-kapat)
+			{
+				// Genel
+				.#{$bosluk-isimleri-deger}-#{$bosluk-hali-deger}#{$bosluk-degerleri-isim} {
+					@include rfs(
+						$bosluk-degerleri-deger,
+						$bosluk-isimleri-isim
+					);
+				}
+
+				// Tum yonler
+				@each $bosluk-yonleri-isim,
+					$bosluk-yonleri-deger in $bosluk-yonleri
+				{
+					.#{$bosluk-isimleri-deger}#{$bosluk-yonleri-deger}-#{$bosluk-hali-deger}#{$bosluk-degerleri-isim} {
+						@include rfs(
+							$bosluk-degerleri-deger,
+							#{$bosluk-isimleri-isim}-#{$bosluk-yonleri-isim}
+						);
+					}
+				}
+
+				// Yataylar
+				.#{$bosluk-isimleri-deger}x-#{$bosluk-hali-deger}#{$bosluk-degerleri-isim} {
+					@include rfs(
+						$bosluk-degerleri-deger,
+						#{$bosluk-isimleri-isim}-left
+					);
+					@include rfs(
+						$bosluk-degerleri-deger,
+						#{$bosluk-isimleri-isim}-right
+					);
+				}
+
+				// Dikeyler
+				.#{$bosluk-isimleri-deger}y-#{$bosluk-hali-deger}#{$bosluk-degerleri-isim} {
+					@include rfs(
+						$bosluk-degerleri-deger,
+						#{$bosluk-isimleri-isim}-top
+					);
+					@include rfs(
+						$bosluk-degerleri-deger,
+						#{$bosluk-isimleri-isim}-bottom
+					);
+				}
+			}
+		}
+	}
+}
+/* Normal Modlar SON */
+/* Boşluklar SON */

@@ -1,65 +1,67 @@
-.__hero-slider{
-    @include font-size(3.5rem);
-    @include margin(2rem 0);
-    font-weight: 600;
-    width: 100%;
-    overflow: hidden;
+/* Hero Slider */
+.__hero-slider {
+	@include font-size(3.5rem);
+	@include margin(2rem 0);
+	font-weight: 600;
+	width: 100%;
+	overflow: hidden;
 
-    @include media(tablet){
-        @include font-size(2.5rem);
-        @include margin-top(3rem);
-    }
-    
-    .__icerik{
-        width: 200vw;
-        white-space: nowrap;
-        @include flex-center-row;
-        height: 2.1ch;
-    }
+	@include medya(tablet) {
+		@include font-size(2.5rem);
+		@include margin-top(3rem);
+	}
 
-    .__yazi{
-        display: inline-block;
-        text-align: center;
-        width: calc(100%/7);
-        min-width: 8em;
-        position: relative;
-        left: -30%;
-        cursor: default;
-        user-select: none;
-        animation-name: hero-animasyon;
-        animation-duration: 6s;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
+	.__icerik {
+		width: 200vw;
+		white-space: nowrap;
+		@include flex-center-row;
+		height: 2.1ch;
+	}
 
-        @include media(tablet){
-            width: fit-content;
-            min-width: initial;
-            @include padding(0 1rem);
-        }
-    }
+	.__yazi {
+		display: inline-block;
+		text-align: center;
+		width: calc(100% / 7);
+		min-width: 8em;
+		position: relative;
+		left: -30%;
+		cursor: default;
+		user-select: none;
+		animation-name: hero-animasyon;
+		animation-duration: 6s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
 
-    &.--duraklat{
-        .__yazi{
-            animation-name:none;
-        }
-    }
+		@include medya(tablet) {
+			width: fit-content;
+			min-width: initial;
+			@include padding(0 1rem);
+		}
+	}
 
-    &.--ters-yon{
-        .__yazi{
-            left: -10%;
-            animation-name: hero-animasyon--ters-yon;
-        }
-    }
+	&.--duraklat {
+		.__yazi {
+			animation-name: none;
+		}
+	}
 
-    @keyframes hero-animasyon--ters-yon {
-        to{
-            transform: translateX(-100%);
-        }
-    }
+	&.--ters-yon {
+		.__yazi {
+			left: -10%;
+			animation-name: hero-animasyon--ters-yon;
+		}
+	}
 
-    @keyframes hero-animasyon {
-        to{
-            transform: translateX(100%);
-        }
-    }
+	@keyframes hero-animasyon--ters-yon {
+		to {
+			transform: translateX(-100%);
+		}
+	}
+
+	@keyframes hero-animasyon {
+		to {
+			transform: translateX(100%);
+		}
+	}
 }
+/* Hero Slider SON */

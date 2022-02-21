@@ -1,114 +1,124 @@
-/* Media */
+// Media
 
 // Hazır ayarlar
-$points: (
-    "pc": 1200,
-    "laptop": 992,
-    "tablet": 769,
-    "telefon": 600
-);
+$boyutlar: (
+	"pc": 1200,
+	"laptop": 992,
+	"tablet": 768,
+	"telefon": 576,
+) !default;
 
-@mixin media($veri, $tip: max, $prefix: px) {
-    $veri-tipi: type-of($veri);
-    $break-point: null;
-    
-    @if $veri-tipi == number{
-        @media screen and (#{$tip}-width: #{$veri}) {
-            @content;
-        }
-    }@else if $veri-tipi == string{
-        
-        @each $deger, $index in $points{
-            @if $veri == $deger{
-                $break-point: $index;
-            }
-        }
-        
-        @if $break-point != null {
-            @media screen and (#{$tip}-width: #{$break-point}#{$prefix}) {
-                @content;
-            }
-        } @else {
-            @warn "Hatalı breakpoint değeri";
-        }
-    }
+@mixin medya($veri, $tip: max, $prefix: px) {
+	$veri-tipi: type-of($veri);
+	$break-point: null;
+
+	@if $veri-tipi == number {
+		@media screen and (#{$tip}-width: #{$veri}) {
+			@content;
+		}
+	} @else if $veri-tipi == string {
+		@each $deger, $index in $boyutlar {
+			@if $veri == $deger {
+				$break-point: $index;
+			}
+		}
+
+		@if $break-point != null {
+			@media screen and (#{$tip}-width: #{$break-point}#{$prefix}) {
+				@content;
+			}
+		} @else {
+			@error "Hatalı breakpoint değeri: #{$veri}";
+		}
+	}
 }
-/* Media SON */
+
+// Medya için kısayollar
+@mixin max-medya($veri) {
+	@include medya($veri, max){
+		@content;
+	};
+}
+
+@mixin min-medya($veri) {
+	@include medya($veri, min){
+		@content;
+	};
+}
 
 
-/* Tema */
+// Tema
 @mixin tema($tema: "default") {
-    $element: #{&};
-    @at-root html[data-theme=#{$tema}] #{$element} {
-        @content;
-    }
+	$element: #{&};
+	@at-root html[data-theme="#{$tema}"] #{$element} {
+		@content;
+	}
 }
-/* Tema SON */
 
-
-/* Font Face */
+// Font Face
 @mixin font-face($name, $file) {
-    @font-face {
-        font-family: "#{$name}";
-        src: url("../fonts/#{$file}.eot");
-        src: url("../fonts/#{$file}.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/#{$file}.woff") format("woff"),
-        url("../fonts/#{$file}.ttf") format("truetype"),
-        url("../fonts/#{$file}.svg?#webfont") format("svg");
-    }
+	@font-face {
+		font-family: "#{$name}";
+		src: url("../fonts/#{$file}.eot");
+		src: url("../fonts/#{$file}.eot?#iefix") format("embedded-opentype"),
+			url("../fonts/#{$file}.woff") format("woff"),
+			url("../fonts/#{$file}.ttf") format("truetype"),
+			url("../fonts/#{$file}.svg?#webfont") format("svg");
+	}
 }
-/* Font Face SON */
 
-
-/* Genel */
-@mixin background($url, $size: cover, $position: center, $repeat: no-repeat, $test: null) {
+// Genel
+@mixin background(
+	$url,
+	$size: cover,
+	$position: center,
+	$repeat: no-repeat,
+	$test: null
+) {
 	background-image: $url;
-    background-repeat: $repeat;
-    background-size: $size;
-    background-position: $position;
+	background-repeat: $repeat;
+	background-size: $size;
+	background-position: $position;
 	@if $test != null {
 		background-color: $test;
 	}
 }
 
 @mixin text-truncate($satir: 2) {
-    display: -webkit-box;
-    -webkit-line-clamp: $satir;
-    -webkit-box-orient: vertical; 
-    overflow: hidden;
-    text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: $satir;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
-/* Genel SON */
 
-
-/* Flex */
+// Flex
 @mixin flex {
-    display: flex;
+	display: flex;
 }
 
 @mixin flex-center {
-    align-items: center;
-    align-content: center;
-    justify-content: center
+	align-items: center;
+	align-content: center;
+	justify-content: center;
 }
 
 @mixin flex-row {
-    @include flex;
-    flex-direction: row;
+	@include flex;
+	flex-direction: row;
 }
 
 @mixin flex-column {
-    @include flex;
-    flex-direction: column;
+	@include flex;
+	flex-direction: column;
 }
 
 @mixin flex-center-row {
-    @include flex-row;
-    @include flex-center;
+	@include flex-row;
+	@include flex-center;
 }
 
 @mixin flex-center-column {
-    @include flex-column;
-    @include flex-center;
+	@include flex-column;
+	@include flex-center;
 }
-/* Flex SON */

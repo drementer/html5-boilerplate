@@ -1,58 +1,60 @@
-div.no-js{
-    position: fixed;
-    top: 0;
-    right: 0;
-    background-color: $no-js__arkaplan;
-    border-right: 3px solid $no-js__border;
-    max-width: 50em;
-    z-index: 99;
+/* No Js */
+div.no-js {
+	position: fixed;
+	top: 0;
+	right: 0;
+	background-color: $no-js__arkaplan;
+	border-right: 3px solid $no-js__border;
+	max-width: 50em;
+	z-index: 99;
 
-    @include margin(1rem 2rem);
-    @extend %golge;
-    @include flex;
+	@include margin(1rem 2rem);
+	@extend %golge;
+	@include flex;
 
-    align-content: stretch;
+	align-content: stretch;
 
-    .__ikon{
-        width: 7em;
-        background-color: $no-js__border;
-        align-self: stretch;
-        display: flex;
-        justify-content: center;
-        padding: 1em;
+	.__ikon {
+		width: 7em;
+		background-color: $no-js__border;
+		align-self: stretch;
+		display: flex;
+		justify-content: center;
+		padding: 1em;
 
-        img{
-            width: 100%;
-        }
+		img {
+			width: 100%;
+		}
 
-        @include media(tablet){
-            display: none;
-        }
-    }
+		@include medya(tablet) {
+			display: none;
+		}
+	}
 
-    .__icerik{
-        @include padding(1rem 1.5rem);
-        display: flex;
-        align-items: center;
+	.__icerik {
+		@include padding(1rem 1.5rem);
+		display: flex;
+		align-items: center;
 
-        p{
-            @include font-size(1rem);
-            text-indent: .6em;
-            color: $no-js__yazi;
-        }
-    }
+		p {
+			@include font-size(1rem);
+			text-indent: 0.6em;
+			color: $no-js__yazi;
+		}
+	}
 
-    @include media(pc){
-        border-right: none;
-        margin: 0;
-        border-top: 3px solid $no-js__border;
-        top: 1em;
-        left: 1em;
-        right: 1em;
-        max-width: none;
-    }
+	@include medya(pc) {
+		border-right: none;
+		margin: 0;
+		border-top: 3px solid $no-js__border;
+		top: 1em;
+		left: 1em;
+		right: 1em;
+		max-width: none;
+	}
 
-    @include media(tablet){
-        border-radius: 0;
-    }
+	@include medya(tablet) {
+		border-radius: 0;
+	}
 }
+/* No Js SON */

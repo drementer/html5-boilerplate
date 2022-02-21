@@ -1,10 +1,15 @@
-$no-js__border: #6922ee;
-$no-js__arkaplan: #f9faff;
-$no-js__yazi: #130022;
+// Genel
+$beyaz: #ffffff !default;
+$siyah: #000000 !default;
+$kirmizi: red !default;
+$mor: #5900ff !default;
+$mor-pasif: lighten($mor, $amount: 30%) !default;
+$mor-aktif: darken($mor, $amount: 15%) !default;
 
-$modal-arkaplan: #00000062;
+// No Js
+$no-js__border: $mor-aktif !default;
+$no-js__arkaplan: #f9faff !default;
+$no-js__yazi: #130022 !default;
 
-$beyaz: #fff;
-$mor: #5900ff;
-$mor-pasif: lighten($mor, $amount: 30%);
-$mor-aktif: darken($mor, $amount: 15%);
+// Modal
+$modal-arkaplan: rgba($siyah, 0.5) !default;

@@ -1,82 +1,83 @@
-#cerez-popup.cerez-popup{
-    z-index: 99;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    background-color: $no-js__arkaplan;
-    border-right: 3px solid $mor;
+/* Çerez Popup */
+#cerez-popup.cerez-popup {
+	z-index: 99;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	background-color: $no-js__arkaplan;
+	border-right: 3px solid $mor;
 
-    @include margin(2rem); 
-    @include padding(1rem 2rem); 
-    @include flex-row;
-    @extend %golge;
-    align-items: center;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    gap: 1em;
+	@include margin(2rem);
+	@include padding(1rem 2rem);
+	@include flex-row;
+	@extend %golge;
+	align-items: center;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	gap: 1em;
 
-    @include media(pc){
-        bottom: 1em;
-        right: 1em;
-        left: 1em;
-        margin: 0;
-        justify-content: center;
-        border-right: none;
-        border-top: 3px solid $mor;
-    }
+	@include medya(pc) {
+		bottom: 1em;
+		right: 1em;
+		left: 1em;
+		margin: 0;
+		justify-content: center;
+		border-right: none;
+		border-top: 3px solid $mor;
+	}
 
-    .__butonlar{
-        @include flex-center-row;
-        flex-wrap: wrap;
+	.__butonlar {
+		@include flex-center-row;
+		flex-wrap: wrap;
 
-        .--buton{
-            @extend %gecis;
+		.--buton {
+			@extend %gecis;
 
-            &:not(:last-child):hover{
-                transform: translateY(-5px);
-            }
-        }
-    }
+			&:not(:last-child):hover {
+				transform: translateY(-5px);
+			}
+		}
+	}
 
-    .__icerik{
-        width: 100%;
-        max-width: 30em;
-        color: black;
-        text-decoration: none;
-        @include font-size(1rem);
+	.__icerik {
+		width: 100%;
+		max-width: 30em;
+		color: black;
+		text-decoration: none;
+		@include font-size(1rem);
 
-        @include media(tablet){
-            text-align: center;
-        }
+		@include medya(tablet) {
+			text-align: center;
+		}
 
-        p{
-            $satir: var(--satir-sayisi);
-            text-indent: .6em;
-            width: 100%;
-            @include text-truncate($satir);
+		p {
+			$satir: var(--satir-sayisi);
+			text-indent: 0.6em;
+			width: 100%;
+			@include text-truncate($satir);
 
-            @include media(laptop){
-                $satir: 10;
-                @include text-truncate($satir);
-            }
-        }
+			@include medya(laptop) {
+				$satir: 10;
+				@include text-truncate($satir);
+			}
+		}
 
-        &::after{
-            content: attr(data-devam-yazi);
-            text-transform: capitalize;
-            display: inline-block;
-            @include padding(.1rem 0);
-            color: $mor;
-            @include margin-top(.5rem);
-            line-height: 1;
-            border-bottom: 1px solid transparent;
-        }
+		&::after {
+			content: attr(data-devam-yazi);
+			text-transform: capitalize;
+			display: inline-block;
+			@include padding(0.1rem 0);
+			color: $mor;
+			@include margin-top(0.5rem);
+			line-height: 1;
+			border-bottom: 1px solid transparent;
+		}
 
-        &:hover{
-
-            &::after{
-                border-bottom-color:$mor;
-            }
-        }
-    }
+		&:hover {
+			&::after {
+				border-bottom-color: $mor;
+			}
+		}
+	}
 }
+/* Çerez Popup SON */

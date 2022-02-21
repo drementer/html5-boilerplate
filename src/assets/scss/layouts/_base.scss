@@ -1,17 +1,15 @@
+/* Base */
 html {
-    @include media(laptop) {
-        @include font-size(14px);
-    }
+	@include medya(laptop) {
+		@include font-size(14px);
+	}
 }
 
 .--kapali {
-    display: none !important;
+	display: none !important;
 }
 
 .--acik {
-    display: initial;
+	display: initial;
 }
-
-.--mx-auto{
-    margin: auto;
-}
+/* Base SON */
