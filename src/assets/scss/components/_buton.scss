@@ -1,64 +1,83 @@
 /* Butonlar */
-%pasif-buton{
-    --mor: #{$mor-pasif};
-    cursor: not-allowed;
+%buton {
+	@include padding(0.5rem 1rem);
+	@include margin(0.5rem);
+	@include font-size(1rem);
+	line-height: 1.5;
+	display: inline-flex;
+	justify-content: center;
+	white-space: nowrap;
+	text-decoration: none;
+	text-transform: capitalize;
+	outline: none;
+	border: 1px solid transparent;
+	background-color: $mor;
+	color: $beyaz;
+	cursor: pointer;
+	user-select: none;
+	vertical-align: middle;
 }
 
-.--buton{
-    @include padding(.5rem 1rem);
-    @include margin(.5rem);
-    @include font-size(1rem);
-    line-height: 1.5;
-    display: inline-flex;
-    justify-content: center;
-    white-space: nowrap;
-    text-decoration: none;
-    text-transform: capitalize;
-    background-color: $mor;
-    outline: none;
-    border: none;
-    color: $beyaz;
-    cursor: pointer;
-    user-select: none;
-    
-    &.--tip-2{
-        background-color: $beyaz;
-        border: 1px solid $mor;
-        color: $mor;
+.buton {
+	@extend %buton;
 
-        &.--pasif{
-            @extend %pasif-buton;
-            border: 1px solid var(--mor);
-            color: var(--mor);
-            background-color: $beyaz;
-        }
+	&.--tip-2 {
+		background-color: transparent;
+		border-color: $mor;
+		color: $mor;
+		&.--pasif{
+			background-color: transparent;
+			color: $mor-pasif;
+		}
+		&:not(.--pasif):hover {
+			background-color: $mor;
+			color: $beyaz;
+		}
+	}
 
-        &:not(.--pasif):not(.--hayalet):hover{
-            background-color: $mor;
-            color: $beyaz;
-        }
-    }
+	&.--pasif {
+		cursor: not-allowed;
+		background-color: $mor-pasif;
+		color: $beyaz;
+		border-color: $mor-pasif;
+	}
 
-    &.--hayalet{
-        @extend .--tip-2;
-        border: none;
-        background-color: transparent;
-    }
+	&.--hayalet {
+		color: $mor;
+		background-color: transparent;
+		border-color: transparent;
+		&.--pasif{
+			color: $mor-pasif;
+		}
+		&:not(.--pasif):hover {
+			border-color: $mor;
+		}
+	}
 
-    &.--pasif{
-        @extend %pasif-buton;
-        background-color: var(--mor);
-    }
+	&.--buyuk {
+		@include padding(0.76rem 1.25rem);
+		@include font-size(20px);
+	}
 
-    &.--buyuk{
-        @include padding(.76rem 1.25rem);
-        @include font-size(20px);
-    }
+	&.--aktif,
+	&:not(.--pasif):not(.--tip-2):not(.--hayalet):not(.--link):hover {
+		background-color: $mor-aktif;
+		color: $beyaz;
+	}
 
-    &.--aktif,
-    &:not(.--pasif):not(.--tip-2):not(.--hayalet):hover{
-        background-color: $mor-aktif;
-        color: $beyaz;
-    }
+	&.--link {
+		color: blue;
+		background-color: transparent;
+		&:hover {
+			color: blueviolet;
+			text-decoration: underline;
+			background-color: transparent;
+		}
+		&.--pasif {
+			text-decoration: none;
+			color: $mor-pasif;
+			border-color: transparent;
+		}
+	}
 }
 /* Butonlar SON */

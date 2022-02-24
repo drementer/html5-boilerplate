@@ -2,9 +2,9 @@
     by drementer
     klncarslanburak@gmail.com
     iletisim@drementer.com
-    https://github.com/drementer
+	
+	MIT LICENSE: (https://github.com/drementer/dred/blob/master/LICENSE)
 */
 
 import * as fonksiyon from './functions.js';
 fonksiyon.app();
-fonksiyon.hero_slider();
