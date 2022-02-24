@@ -1,6 +1,6 @@
 # html-dosya-yapim
 
-Yeni projelere hızlı bir başlangıcın yanında [SCSS](https://sass-lang.com/) kullanımını kolaylaştıran web geliştirme ortamı.
+Projelerim için kalıp.
 
 ## Menu
 
