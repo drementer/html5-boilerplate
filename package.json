@@ -7,6 +7,12 @@
 	"scripts": {
 		"": ""
 	},
+	"keywords": [
+		"scss",
+		"css",
+		"html",
+		"framework"
+	],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/drementer/html-dosya-yapim.git"
