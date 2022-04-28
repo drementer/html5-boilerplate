@@ -6,16 +6,16 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="robots" content="index, follow">
+	<meta name="robots" content="sub, follow">
 	<meta name="author" content="drementer">
 	<meta name="creator" content="drementer">
-	<base href="../">
+	<base href="./">
 	<link rel="stylesheet" href="assets/css/main.min.css">
 
 	<!-- Sayfa bilgileri -->
-	<title>drementer</title>
-	<meta name="title" content="drementer">
-	<meta name="description" content="drementer">
+	<title>sub</title>
+	<meta name="title" content="sub">
+	<meta name="description" content="sub">
 	<meta name="keywords" content="drementer">
 	<meta name="theme-color" content="#000">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -26,35 +26,31 @@
 	<meta property="og:locale" content="tr_TR">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="http://drementer.com/">
-	<meta property="og:title" content="drementer">
+	<meta property="og:title" content="sub">
 	<meta property="og:description" content="drementer">
 	<meta property="og:image" content="img/og-img.png">
 
 	<!-- Open Graph Twitter -->
-	<meta property="twitter:creator" content="@drementer9">
-	<meta property="twitter:card" content="summary_large_image">
-	<meta property="twitter:domain" content="drementer.com">
-	<meta property="twitter:url" content="http://drementer.com/">
-	<meta property="twitter:title" content="drementer">
-	<meta property="twitter:description" content="drementer">
-	<meta property="twitter:image" content="img/og-img.png">
-	<meta property="twitter:image:alt" content="drementer">
-
+	<meta name="twitter:creator" content="@drementer9">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:domain" content="drementer.com">
+	<meta name="twitter:url" content="http://drementer.com/">
+	<meta name="twitter:title" content="sub">
+	<meta name="twitter:description" content="drementer">
+	<meta name="twitter:image" content="img/og-img.png">
+	<meta name="twitter:image:alt" content="drementer">
+	
 </head>
 <body>
 
 	<!-- No Js -->
 	<noscript>
 		<div id="no-js" class="no-js">
-			<div class="__ikon">
-				<img src="assets/img/ikon/uyari.svg" alt="Uyari işareti">
+			<div class="no-js__ikon">
+				<ion-icon name="logo-javascript"></ion-icon>
 			</div>
-			<div class="__icerik">
-				<p>
-					Tarayıcınızın JavaScript desteği şuan pasif durumda,
-					sizlere daha iyi bir hizmet sunabilmemiz için lütfen
-					aktif edin.
-				</p>
+			<div class="no-js__icerik">
+				<p>Tarayıcınızın JavaScript desteği şuan pasif durumda, sizlere daha iyi bir hizmet sunabilmemiz için lütfen aktif edin.</p>
 			</div>
 		</div>
 	</noscript>
@@ -63,11 +59,11 @@
 
 	<!--[if IE 6]>
 		<aside id="lte-popup" class="lte-popup">
-			<h2 class="_baslik" >Tarayıcını güncellemek isteyebilirsin</h2>
+			<h2 class="lte-popup__baslik" >Tarayıcını güncellemek isteyebilirsin</h2>
 			<p>Şuan eski bir tarayıcı kullanıyorsun. Daha iyi bir deneyim için <a href="http://windows.microsoft.com/en-gb/internet-explorer/download-ie">bu linkten</a> tarayıcınızı güncelleyin veya farklı bir tarayıcı kullanmayı deneyin.</p>
 		</aside>
 	<![endif]-->
-
+	
 
 	<!-- Uygulama -->
 	<main id="root" class="ana-sayfa">
@@ -77,15 +73,14 @@
 
 
 	<!-- Çerez Popup -->
-	<div id="cerez-popup" class="cerez-popup">
-		<a href="#" class="__icerik" data-devam-yazi="detayli bilgi">
-			<p style="--satir-sayisi:2;">
-				Bilginiz olsun diye söylüyorum, bu web sitesi çerez kullanıyor.
-			</p>
+	<div id="cerez-popup" class="cerez-popup" kapali>
+		<a href="#" class="cerez-popup__icerik">
+			<p>Bilginiz olsun diye söylüyorum, bu web sitesi çerez kullanıyor.</p>
+			<span>detayli bilgi</span>
 		</a>
-		<div class="__butonlar">
-			<button class="buton --kabul">anladım</button>
-			<button class="buton --hayalet --daha-sonra">sonra hatırlat</button>
+		<div class="cerez-popup__butonlar">
+			<button class="buton buton--kabul">anladım</button>
+			<button class="buton buton--2 buton--daha-sonra">sonra hatırlat</button>
 		</div>
 	</div>
 	<!-- Çerez Popup SON -->
