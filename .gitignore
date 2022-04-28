@@ -1,1 +1,17 @@
+# System
+.DS_Store
+.Spotlight-V100
+Desktop.ini
 desktop.ini
+
+# IDEs
+.vscode
+*.sublime-project
+*.sublime-workspace
+
+# ENVs
+node_modules
+.env
+
+# Project
+/tmp/
