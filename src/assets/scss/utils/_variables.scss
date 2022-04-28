@@ -6,10 +6,12 @@ $mor: #5900ff !default;
 $mor-pasif: lighten($mor, $amount: 30%) !default;
 $mor-aktif: darken($mor, $amount: 15%) !default;
 
+// Renk Paleti
+$metin: #130022 !default;
+
 // No Js
 $no-js__border: $mor-aktif !default;
 $no-js__arkaplan: #f9faff !default;
-$no-js__yazi: #130022 !default;
 
 // Modal
 $modal-arkaplan: rgba($siyah, 0.5) !default;

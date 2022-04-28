@@ -7,4 +7,84 @@
 	-webkit-font-smoothing: antialiased !important;
 	-moz-osx-font-smoothing: grayscale !important;
 }
+
+html {
+	font-size: 16px;
+	line-height: 1.5;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+
+	@include medya(lg) {
+		font-size: 14px;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-transform: capitalize;
+
+	&.sub-head {
+		@include font-size(2rem);
+	}
+	&.sub-head--2 {
+		@include font-size(1.5rem);
+	}
+
+	&.display {
+		@include font-size(6rem);
+	}
+	&.display--2 {
+		@include font-size(4.5rem);
+	}
+	&.display--3 {
+		@include font-size(4rem);
+	}
+	&.display--4 {
+		@include font-size(3rem);
+	}
+}
+
+h1 {
+	@include font-size(3.5rem);
+}
+
+h2 {
+	@include font-size(3rem);
+}
+
+h3 {
+	@include font-size(2.5rem);
+}
+
+h4 {
+	@include font-size(2rem);
+}
+
+h5 {
+	@include font-size(1.75rem);
+}
+
+h6 {
+	@include font-size(1.5rem);
+}
+
+p {
+	@include font-size(1rem);
+}
+
+label {
+	@include font-size(0.875rem);
+}
+
+span {
+	font-size: inherit;
+}
+
+.caption {
+	font-size: 12px;
+}
 /* Typography SON */

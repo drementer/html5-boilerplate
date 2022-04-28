@@ -1,0 +1,22 @@
+/* Layout */
+* {
+	scroll-margin-top: 1.5rem;
+	transition: all 150ms ease-out;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+template,
+[kapali] {
+	display: none !important;
+}
+/* Layout SON */

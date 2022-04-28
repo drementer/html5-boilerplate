@@ -1,0 +1,71 @@
+/* Kolonlar & Satirlar */
+$media: lg;
+
+.kolonlar,
+.satirlar {
+	width: 100%;
+	@include padding(1rem 2rem);
+	gap: 1em;
+	flex-wrap: nowrap;
+
+	&.--orta {
+		& * {
+			text-align: center;
+		}
+	}
+
+	> .__eleman {
+		flex-basis: 0;
+		flex-grow: 1;
+		flex-shrink: 1;
+		/* height: fit-content; */
+		@include padding(1rem 2rem);
+	}
+}
+
+.kolonlar {
+	@include flex-row;
+
+	@include medya($media) {
+		@include flex-column;
+	}
+
+	&.--orta {
+		> .__eleman {
+			@include flex-center-column;
+			// inline flex olması gerek şuan saçma bir şkeilde
+		}
+	}
+
+	@for $i from 1 to 6 {
+		&.--kolon-#{$i} {
+			display: block;
+			columns: calc(15em - #{$i} * 1em) #{$i};
+
+			> *:not(p) {
+				display: inline-block;
+				@include margin(0.5rem 1rem 0 1rem);
+				width: 100%;
+				min-width: fit-content;
+			}
+
+			&.--kirilma {
+				> * {
+					break-inside: avoid;
+					page-break-inside: avoid;
+				}
+			}
+		}
+	}
+}
+
+.satirlar {
+	@include flex-column;
+
+	&.--orta {
+		> .__eleman {
+			@include flex-center-row;
+		}
+	}
+}
+/* Kolonlar & Satirlar SON */

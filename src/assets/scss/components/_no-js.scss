@@ -1,5 +1,5 @@
 /* No Js */
-div.no-js {
+.no-js {
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -7,43 +7,62 @@ div.no-js {
 	border-right: 3px solid $no-js__border;
 	max-width: 50em;
 	z-index: 99;
+	align-content: stretch;
 
 	@include margin(1rem 2rem);
 	@extend %golge;
 	@include flex;
 
-	align-content: stretch;
-
-	.__ikon {
-		width: 7em;
-		background-color: $no-js__border;
-		align-self: stretch;
-		display: flex;
+	@include medya(md) {
+		@include flex-column;
 		justify-content: center;
-		padding: 1em;
+		align-items: center;
+	}
 
-		img {
-			width: 100%;
+	&__ikon {
+		display: flex;
+		width: fit-content;
+		height: fit-content;
+		justify-content: center;
+
+		@include min-medya(md) {
+			align-self: stretch;
 		}
 
-		@include medya(tablet) {
-			display: none;
+		ion-icon {
+			width: 7rem;
+			height: 7rem;
+			color: $mor;
+
+			@include medya(md) {
+				width: 5rem;
+				height: 5rem;
+			}
+		}
+
+		@include medya(md) {
+			background-color: transparent;
 		}
 	}
 
-	.__icerik {
+	&__icerik {
 		@include padding(1rem 1.5rem);
+
+		@include medya(md) {
+			@include padding(0.5rem 1rem);
+		}
+
 		display: flex;
 		align-items: center;
 
 		p {
 			@include font-size(1rem);
 			text-indent: 0.6em;
-			color: $no-js__yazi;
+			color: $metin;
 		}
 	}
 
-	@include medya(pc) {
+	@include medya(xl) {
 		border-right: none;
 		margin: 0;
 		border-top: 3px solid $no-js__border;
@@ -53,7 +72,7 @@ div.no-js {
 		max-width: none;
 	}
 
-	@include medya(tablet) {
+	@include medya(md) {
 		border-radius: 0;
 	}
 }

@@ -1,0 +1,68 @@
+// Medya
+
+// Medya boyutları
+$hazir-deger: (
+	ul: 1400,
+	xl: 1200,
+	lg: 992,
+	md: 768,
+	sm: 576,
+	xs: 360,
+) !default;
+
+// Hazır değeri çekmek için
+@function medya-hazir-deger-al($deger) {
+	@if map-has-key($hazir-deger, $deger) {
+		@return map-get($hazir-deger, $deger);
+	} @else {
+		@warn "#{$deger}'i hazır değerler içinde yok.";
+	}
+}
+
+// İşlem
+@mixin medya($bitis: null, $baslangic: null) {
+	$max-width: null;
+	$min-width: null;
+	$medya-query: "";
+
+	@if $bitis {
+		@if type-of($bitis) == number {
+			$max-width: $bitis;
+		} @else {
+			$max-width: #{medya-hazir-deger-al($bitis)}px;
+		}
+	}
+
+	@if $baslangic {
+		@if type-of($baslangic) == number {
+			$min-width: $baslangic;
+		} @else {
+			$min-width: #{medya-hazir-deger-al($baslangic)}px;
+		}
+	}
+
+	@if ($max-width != null) and ($min-width != null) {
+		$medya-query: "(min-width: #{$min-width}) and (max-width: #{$max-width})";
+	} @else if $max-width {
+		$medya-query: "(max-width: #{$max-width})";
+	} @else if $min-width {
+		$medya-query: "(min-width: #{$min-width})";
+	}
+
+	@media screen and #{$medya-query} {
+		@content;
+	}
+}
+
+// Kısayollar
+@mixin min-medya($deger) {
+	@include medya(null, $deger) {
+		@content;
+	}
+}
+
+@mixin max-medya($deger) {
+	@include medya($deger) {
+		@content;
+	}
+}

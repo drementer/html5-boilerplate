@@ -1,9 +1,8 @@
 /* Butonlar */
-%buton {
+.buton {
 	@include padding(0.5rem 1rem);
 	@include margin(0.5rem);
-	@include font-size(1rem);
-	line-height: 1.5;
+	@include font-size(1.2rem);
 	display: inline-flex;
 	justify-content: center;
 	white-space: nowrap;
@@ -16,68 +15,42 @@
 	cursor: pointer;
 	user-select: none;
 	vertical-align: middle;
-}
 
-.buton {
-	@extend %buton;
-
-	&.--tip-2 {
-		background-color: transparent;
-		border-color: $mor;
-		color: $mor;
-		&.--pasif{
-			background-color: transparent;
-			color: $mor-pasif;
-		}
-		&:not(.--pasif):hover {
-			background-color: $mor;
-			color: $beyaz;
-		}
-	}
-
-	&.--pasif {
-		cursor: not-allowed;
-		background-color: $mor-pasif;
-		color: $beyaz;
-		border-color: $mor-pasif;
-	}
-
-	&.--hayalet {
-		color: $mor;
-		background-color: transparent;
-		border-color: transparent;
-		&.--pasif{
-			color: $mor-pasif;
-		}
-		&:not(.--pasif):hover {
-			border-color: $mor;
-		}
-	}
-
-	&.--buyuk {
-		@include padding(0.76rem 1.25rem);
-		@include font-size(20px);
-	}
-
-	&.--aktif,
-	&:not(.--pasif):not(.--tip-2):not(.--hayalet):not(.--link):hover {
+	&:hover {
 		background-color: $mor-aktif;
-		color: $beyaz;
 	}
 
-	&.--link {
-		color: blue;
-		background-color: transparent;
+	&#{&}--2 {
+		background-color: transparent !important;
+		color: $mor;
+		border-color: currentColor !important;
+
 		&:hover {
-			color: blueviolet;
-			text-decoration: underline;
-			background-color: transparent;
+			color: $mor-aktif;
 		}
-		&.--pasif {
-			text-decoration: none;
-			color: $mor-pasif;
-			border-color: transparent;
+	}
+
+	&#{&}--hayalet {
+		background-color: transparent !important;
+		color: $mor;
+
+		&:hover {
+			color: $mor-aktif;
+			border-color: currentColor;
 		}
+	}
+
+	&#{&}--link {
+		background-color: transparent !important;
+		color: $mor;
+
+		&:hover {
+			color: $mor-aktif;
+		}
+	}
+
+	&#{&}--buyuk{
+		@include font-size(1.5rem);
 	}
 }
 /* Butonlar SON */
