@@ -1,10 +1,12 @@
 // Genel
+$mavi: #eff3f4 !default;
 $beyaz: #ffffff !default;
 $siyah: #000000 !default;
 $kirmizi: red !default;
 $mor: #5900ff !default;
-$mor-pasif: lighten($mor, $amount: 30%) !default;
-$mor-aktif: darken($mor, $amount: 15%) !default;
+$mor-pasif: lighten($mor, 30%) !default;
+$mor-aktif: darken($mor, 15%) !default;
+$mor-hover: rgba($mor, 0.1) !default;
 
 // Renk Paleti
 $metin: #130022 !default;

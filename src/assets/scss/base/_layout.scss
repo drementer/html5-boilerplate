@@ -1,10 +1,5 @@
-/* Layout */
 * {
 	scroll-margin-top: 1.5rem;
-	transition: all 150ms ease-out;
-	box-sizing: border-box;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-	-webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -19,4 +14,17 @@ template,
 [kapali] {
 	display: none !important;
 }
-/* Layout SON */
+
+[disabled] {
+	cursor: not-allowed;
+}
+
+.konteyner {
+	@include padding(3rem 2rem);
+	max-width: 1400px;
+	margin: auto;
+
+	@include medya(md) {
+		@include padding(2rem 1rem);
+	}
+}

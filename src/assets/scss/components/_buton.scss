@@ -1,8 +1,8 @@
-/* Butonlar */
 .buton {
 	@include padding(0.5rem 1rem);
 	@include margin(0.5rem);
 	@include font-size(1.2rem);
+	position: relative;
 	display: inline-flex;
 	justify-content: center;
 	white-space: nowrap;
@@ -13,7 +13,6 @@
 	background-color: $mor;
 	color: $beyaz;
 	cursor: pointer;
-	user-select: none;
 	vertical-align: middle;
 
 	&:hover {
@@ -21,36 +20,49 @@
 	}
 
 	&#{&}--2 {
-		background-color: transparent !important;
+		background-color: transparent;
 		color: $mor;
-		border-color: currentColor !important;
+		border-color: currentColor;
 
 		&:hover {
-			color: $mor-aktif;
+			background-color: $mor-hover;
 		}
 	}
 
 	&#{&}--hayalet {
-		background-color: transparent !important;
+		background-color: transparent;
 		color: $mor;
 
 		&:hover {
-			color: $mor-aktif;
 			border-color: currentColor;
 		}
 	}
 
 	&#{&}--link {
-		background-color: transparent !important;
+		background-color: transparent;
 		color: $mor;
+		margin: 0;
+		padding: 0;
+
+		&::after {
+			content: "";
+			width: 100%;
+			height: 2px;
+			background-color: currentColor;
+			display: block;
+			position: absolute;
+			bottom: 0;
+			opacity: 0;
+		}
 
 		&:hover {
-			color: $mor-aktif;
+			&::after {
+				opacity: 1;
+			}
 		}
 	}
 
-	&#{&}--buyuk{
+	&#{&}--buyuk {
 		@include font-size(1.5rem);
 	}
 }
-/* Butonlar SON */

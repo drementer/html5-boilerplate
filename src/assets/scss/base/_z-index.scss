@@ -1,0 +1,20 @@
+$liste: (
+	"mf-cursor",
+	"modal",
+	"popup",
+	"sidebar",
+	"toast",
+	"no-js",
+	"go-top",
+	"header",
+	"buton"
+) !default;
+
+$z-index: 99 !default;
+
+@each $eleman in $liste {
+	.#{eleman} {
+		z-index: $z-index;
+	}
+	$z-index: $z-index - 1;
+}

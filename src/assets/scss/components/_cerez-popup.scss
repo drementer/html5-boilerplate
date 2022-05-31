@@ -1,11 +1,9 @@
-/* Çerez Popup */
 .cerez-popup {
 	@include margin(2rem);
 	@include padding(1rem 2rem);
 	@include flex-row;
 	@extend %golge;
 
-	z-index: 9999;
 	position: fixed;
 	bottom: 0;
 	right: 0;
@@ -67,4 +65,3 @@
 		}
 	}
 }
-/* Çerez Popup SON */

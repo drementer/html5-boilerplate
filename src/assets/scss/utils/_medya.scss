@@ -11,7 +11,7 @@ $hazir-deger: (
 ) !default;
 
 // Hazır değeri çekmek için
-@function medya-hazir-deger-al($deger) {
+@function hazir-medya-degeri-al($deger) {
 	@if map-has-key($hazir-deger, $deger) {
 		@return map-get($hazir-deger, $deger);
 	} @else {
@@ -29,7 +29,7 @@ $hazir-deger: (
 		@if type-of($bitis) == number {
 			$max-width: $bitis;
 		} @else {
-			$max-width: #{medya-hazir-deger-al($bitis)}px;
+			$max-width: #{hazir-medya-degeri-al($bitis)}px;
 		}
 	}
 
@@ -37,7 +37,7 @@ $hazir-deger: (
 		@if type-of($baslangic) == number {
 			$min-width: $baslangic;
 		} @else {
-			$min-width: #{medya-hazir-deger-al($baslangic)}px;
+			$min-width: #{hazir-medya-degeri-al($baslangic)}px;
 		}
 	}
 
@@ -63,6 +63,12 @@ $hazir-deger: (
 
 @mixin max-medya($deger) {
 	@include medya($deger) {
+		@content;
+	}
+}
+
+@mixin aralik-medya($baslangic, $bitis) {
+	@include medya($bitis, $baslangic) {
 		@content;
 	}
 }

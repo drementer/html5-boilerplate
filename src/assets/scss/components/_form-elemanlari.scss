@@ -1,0 +1,247 @@
+input,
+textarea,
+select {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	outline: 0;
+	border: none;
+	font-size: inherit;
+	background-color: transparent;
+	border: none;
+	display: block;
+
+	&:not([type="email"])::placeholder {
+		text-transform: capitalize;
+	}
+}
+
+select {
+	min-height: 1.6875rem;
+}
+
+textarea {
+	height: max-content;
+	resize: none;
+	overflow-y: hidden;
+	min-height: 70px !important;
+
+	&::-webkit-scrollbar {
+		display: none !important;
+	}
+
+	&::-moz-scrollbar {
+		display: none !important;
+	}
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+.input {
+	margin: 0;
+	outline: 0;
+	background-color: transparent;
+	gap: 0.5rem;
+
+	@include flex-column;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	label {
+		text-transform: capitalize;
+	}
+
+	&[required] {
+		label {
+			&::after {
+				content: "*";
+				margin-left: 0.5rem;
+				color: $mor;
+			}
+		}
+	}
+
+	&[focus] &__icerik {
+		border-color: $metin;
+	}
+
+	&[invalid] &__incorrect-error {
+		@include flex;
+	}
+
+	&[null] &__required-error {
+		@include flex;
+	}
+
+	&[invalid] &__icerik {
+		input,
+		textarea,
+		select {
+			border-color: $mor;
+			color: $mor;
+
+			&::placeholder {
+				color: $mor;
+			}
+		}
+	}
+
+	&__icerik {
+		position: relative;
+		border-radius: 5px;
+		display: block;
+		width: 100%;
+
+		input,
+		textarea,
+		select {
+			border-radius: 5px;
+			border: 1px solid $metin;
+
+			&:hover,
+			&:focus {
+				border-color: $metin;
+			}
+		}
+	}
+
+	&__after {
+		display: none;
+		position: absolute;
+		right: 1rem;
+		bottom: calc(-1rem + 1px);
+		font-size: 14px;
+		padding: 0.5rem;
+		z-index: 3;
+		justify-content: center;
+		align-items: center;
+
+		span {
+			z-index: 2;
+			position: relative;
+			color: $mor;
+		}
+
+		&::after {
+			content: "";
+			background-color: $mavi;
+			width: 100%;
+			height: 8px;
+			display: block;
+			position: absolute;
+			bottom: 0.5rem;
+			z-index: 1;
+		}
+	}
+
+	&__required-error {
+		right: unset;
+		left: 1rem;
+	}
+
+	&__aciklama {
+		font-size: 14px;
+		display: block;
+		margin-left: 1rem;
+		@include truncate(1);
+	}
+
+	input,
+	textarea,
+	select {
+		@include padding(0.5rem 1rem);
+		z-index: 1;
+	}
+}
+
+.input,
+.checkbox,
+.radio {
+	@include margin(1rem);
+	@include font-size(1rem);
+	max-width: 24rem;
+
+	a {
+		text-transform: capitalize;
+		color: $metin;
+	}
+}
+
+.checkbox,
+.radio {
+	input {
+		display: none;
+
+		&:checked + label .checkbox__label-kutu::after,
+		&:checked + label .radio__label-kutu::after {
+			transform: scale(1);
+			opacity: 1;
+		}
+
+		&:checked + label .checkbox__label-kutu,
+		&:checked + label .radio__label-kutu {
+			border-color: $metin !important;
+		}
+	}
+
+	&[required] {
+		&::after {
+			content: "Required field *";
+			font-size: 14px;
+			display: block;
+			margin-left: 2rem;
+			color: $mor;
+		}
+	}
+
+	&__label {
+		@include flex-row;
+		gap: 0.5rem;
+		align-items: center;
+	}
+
+	&__label-kutu {
+		cursor: pointer;
+		width: 1.2rem;
+		height: 1.2rem;
+		min-width: 1.2rem;
+		background-color: transparent;
+		border: 1px solid $metin;
+		margin: 2px 0;
+		border-radius: 25%;
+		display: grid;
+		place-content: center;
+
+		&::after {
+			content: "✔";
+			display: block;
+			color: $metin;
+			position: relative;
+			transform: scale(0);
+			opacity: 0.5;
+			top: -3px;
+			right: -2px;
+			transform-origin: center;
+			font-size: 22px;
+			transition: all 100ms cubic-bezier(0.05, 1.79, 1, 0.99);
+		}
+	}
+
+	&__label-yazi {
+		display: block;
+		user-select: none;
+	}
+}
+
+.radio {
+	&__label-kutu {
+		border-radius: 50%;
+	}
+}
