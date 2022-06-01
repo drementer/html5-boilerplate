@@ -1,7 +1,9 @@
 $liste: (
+	"loader",
 	"mf-cursor",
 	"modal",
 	"popup",
+	"cerez-popup",
 	"sidebar",
 	"toast",
 	"no-js",
@@ -13,7 +15,7 @@ $liste: (
 $z-index: 99 !default;
 
 @each $eleman in $liste {
-	.#{eleman} {
+	.#{$eleman} {
 		z-index: $z-index;
 	}
 	$z-index: $z-index - 1;

@@ -4,12 +4,6 @@
  * klncarslanburak@gmail.com
  * @license MIT (https://github.com/drementer/dred/blob/master/LICENSE)
 */
-/* 
-/////////////////////////////////////
-	Vendors
-/////////////////////////////////////
-*/
-/* Reduce Motion */
 /*
 	(https://github.com/csstools/sanitize.css/blob/main/reduce-motion.css)
 
@@ -42,7 +36,31 @@
     /* 4 */
   }
 }
-/* Reduce Motion SON */
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after,
+[reduce-motion] *,
+[reduce-motion] *::before,
+[reduce-motion] *::after {
+  -webkit-animation-delay: -1ms !important;
+          animation-delay: -1ms !important;
+  /* 1 */
+  -webkit-animation-duration: 1ms !important;
+          animation-duration: 1ms !important;
+  /* 1 */
+  -webkit-animation-iteration-count: 1 !important;
+          animation-iteration-count: 1 !important;
+  /* 1 */
+  background-attachment: initial !important;
+  /* 2 */
+  scroll-behavior: auto !important;
+  /* 3 */
+  transition-delay: 0s !important;
+  /* 4 */
+  transition-duration: 0s !important;
+  /* 4 */
+}
+
 .mf-cursor {
   position: fixed;
   top: 0;
@@ -160,20 +178,10 @@
   transition-delay: 0s, 0s;
 }
 
-/* 
-/////////////////////////////////////
-	Vendors SON
-/////////////////////////////////////
-*/
 .no-js, .cerez-popup {
   box-shadow: 4.5px 4.5px 3.6px rgba(0, 0, 0, 0.014), 12.5px 12.5px 10px rgba(0, 0, 0, 0.02), 30.1px 30.1px 24.1px rgba(0, 0, 0, 0.026), 100px 100px 80px rgba(0, 0, 0, 0.04);
 }
 
-/*
-/////////////////////////////////////
-	Base
-/////////////////////////////////////
-*/
 /* 
 	(https://github.com/jgthms/minireset.css),
 	(https://github.com/necolas/normalize.css)
@@ -181,7 +189,6 @@
 
 	Ve kendi deneyimlerimden yola çıkarak oluşturdum
 */
-/* Reset */
 * {
   background-repeat: no-repeat;
   -moz-tab-size: 4;
@@ -287,8 +294,6 @@ button,
   -webkit-appearance: none;
 }
 
-/* Reset SON */
-/* Typography */
 * {
   font-family: "Fira Code";
   line-height: 1.5;
@@ -419,46 +424,50 @@ textarea {
   font-weight: normal;
 }
 
-/* Typography SON */
-/* Z-index */
-.mf-cursor {
+.loader {
   z-index: 99;
 }
 
-.modal {
+.mf-cursor {
   z-index: 98;
 }
 
-.popup {
+.modal {
   z-index: 97;
 }
 
-.sidebar {
+.popup {
   z-index: 96;
 }
 
-.toast {
+.cerez-popup {
   z-index: 95;
 }
 
-.no-js {
+.sidebar {
   z-index: 94;
 }
 
-.go-top {
+.toast {
   z-index: 93;
 }
 
-.header {
+.no-js {
   z-index: 92;
 }
 
-.buton {
+.go-top {
   z-index: 91;
 }
 
-/* Z-index SON */
-/* Layout */
+.header {
+  z-index: 90;
+}
+
+.buton {
+  z-index: 89;
+}
+
 * {
   scroll-margin-top: 1.5rem;
 }
@@ -501,28 +510,6 @@ template,
   }
 }
 
-/* Layout SON */
-/* 
-/////////////////////////////////////
-	Base SON
-/////////////////////////////////////
-*/
-/* 
-/////////////////////////////////////
-	Layout
-/////////////////////////////////////
-*/
-/* 
-/////////////////////////////////////
-	Layout SON
-/////////////////////////////////////
-*/
-/* 
-/////////////////////////////////////
-	Components
-/////////////////////////////////////
-*/
-/* Butonlar */
 .buton {
   padding: 0.5rem 1rem;
   margin: 0.5rem;
@@ -586,8 +573,6 @@ template,
   }
 }
 
-/* Butonlar SON */
-/* Çerez Popup */
 .cerez-popup {
   margin: 2rem;
   padding: 1rem 2rem;
@@ -661,8 +646,6 @@ template,
   border-bottom-color: #5900ff;
 }
 
-/* Çerez Popup SON */
-/* Kolonlar */
 .kolonlar {
   width: 100%;
   display: flex;
@@ -781,8 +764,6 @@ template,
   page-break-inside: avoid;
 }
 
-/* Kolonlar SON */
-/* No Js */
 .no-js {
   position: fixed;
   top: 0;
@@ -880,7 +861,6 @@ template,
   }
 }
 
-/* No Js SON */
 .go-top {
   font-size: 1rem;
   position: fixed;
@@ -958,7 +938,6 @@ template,
   background-color: #ffffff;
   display: grid;
   place-content: center;
-  z-index: 99999;
   overflow: hidden;
   transition: all 200ms ease-out;
   -webkit-user-select: none;
@@ -1294,34 +1273,4 @@ input[type=number] {
 
 .radio__label-kutu {
   border-radius: 50%;
-}
-
-/* 
-/////////////////////////////////////
-	Components SON
-/////////////////////////////////////
-*/
-/* 
-/////////////////////////////////////
-	Pages
-/////////////////////////////////////
-*/
-/* 
-/////////////////////////////////////
-	Pages SON
-/////////////////////////////////////
-*/
-/* 
-/////////////////////////////////////
-	Themes
-/////////////////////////////////////
-*/
-/* Dark */
-/* Dark SON */
-/* Defaut */
-/* Defaut SON */
-/* 
-/////////////////////////////////////
-	Themes SON
-/////////////////////////////////////
-*//*# sourceMappingURL=main.min.css.map */
+}/*# sourceMappingURL=main.min.css.map */

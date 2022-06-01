@@ -34,8 +34,8 @@ import cursor from "./components/__cursor.js";
 cursor();
 
 // Go Top
-import got_to_top from "./components/__go-top.js";
-got_to_top();
+import got_top from "./components/__go-top.js";
+got_top();
 
 // Loader
 import loader from "./components/__loader.js";
