@@ -1,8 +1,8 @@
 {
-	"name": "proje-ismi",
+	"name": "",
 	"version": "0.0.1",
-	"homepage": "http://proje-ismi.com",
-	"description": "Proje açıklaması",
+	"homepage": "http://.com",
+	"description": "",
 	"scripts": {
 		"": ""
 	},
@@ -11,7 +11,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/drementer/proje-ismi.git"
+		"url": "git+https://github.com/drementer/.git"
 	},
 	"author": {
 		"name": "drementer",
@@ -20,6 +20,6 @@
 	},
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/drementer/proje-ismi/issues"
+		"url": "https://github.com/drementer//issues"
 	}
 }
