@@ -1,6 +1,6 @@
-# html-dosya-yapim
+# Proje İsmi
 
-Projelerim için kalıp.
+Proje açıklaması
 
 ## Menu
 
@@ -11,12 +11,12 @@ Projelerim için kalıp.
 
 ## Hızlı Başlangıç
 
-[En güncel hali (zip)](https://github.com/drementer/html-dosya-yapim/archive/refs/heads/master.zip)
+[En güncel hali (zip)](https://github.com/drementer/proje-ismi/archive/refs/heads/master.zip)
 
 Terminal kullanarak indir
 
 ```bash
-  git clone https://github.com/drementer/html-dosya-yapim.git
+  git clone https://github.com/drementer/proje-ismi.git
 ```
 
 ## Kullanım/Örnekler
