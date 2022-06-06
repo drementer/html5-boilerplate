@@ -42,77 +42,85 @@
 	<meta name="twitter:image:alt" content="">
 	
 </head>
-<body class="ana-sayfa">
+<body>
 
-	<!-- No Script -->
-	<noscript>
-	
-		<!-- No Js -->
-		<div id="no-js" class="no-js">
+	<!-- Root -->
+	<div id="root" class="ana-sayfa">
 
-			<!-- İkon -->
-			<div class="no-js__ikon">
-				<ion-icon name="logo-javascript"></ion-icon>
-			</div><!-- İkon -->
+		<!-- No Script -->
+		<noscript>
+		
+			<!-- No Js -->
+			<div id="no-js" class="no-js">
+
+				<!-- İkon -->
+				<div class="no-js__ikon">
+					<ion-icon name="logo-javascript"></ion-icon>
+				</div><!-- İkon -->
+
+				<!-- İçerik -->
+				<div class="no-js__icerik">
+					<p>
+						Tarayıcınızın <a href="">javascript</a> desteği 
+						şuan pasif durumda, sizlere daha 
+						iyi bir hizmet sunabilmemiz için 
+						lütfen aktif edin.
+					</p>
+				</div><!-- İçerik -->
+			</div><!-- No Js SON -->
+		</noscript><!-- No Script -->
+
+		<!-- Çerez Popup -->
+		<div id="cerez-popup" class="cerez-popup" kapali>
 
 			<!-- İçerik -->
-			<div class="no-js__icerik">
+			<a href="#" class="cerez-popup__icerik" aria-label="Detaylı bilgi">
 				<p>
-					Tarayıcınızın <a href="">javascript</a> desteği 
-					şuan pasif durumda, sizlere daha 
-					iyi bir hizmet sunabilmemiz için 
-					lütfen aktif edin.
+					Bilginiz olsun diye söylüyorum, 
+					bu web sitesi çerez kullanıyor.
 				</p>
-			</div><!-- İçerik -->
-		</div><!-- No Js SON -->
-	</noscript><!-- No Script -->
+				<span>detayli bilgi</span>
+			</a><!-- İçerik -->
 
-	<!-- Çerez Popup -->
-	<div id="cerez-popup" class="cerez-popup" kapali>
+			<!-- Butonlar -->
+			<div class="cerez-popup__butonlar">
+				<button class="buton" aria-label="Anladım">anladım</button>
+				<button class="buton buton--2" aria-label="Sonra hatırlat">sonra hatırlat</button>
+			</div><!-- Butonlar -->
+		</div><!-- Çerez Popup SON -->
 
-		<!-- İçerik -->
-		<a href="#" class="cerez-popup__icerik" aria-label="Detaylı bilgi">
-			<p>
-				Bilginiz olsun diye söylüyorum, 
-				bu web sitesi çerez kullanıyor.
-			</p>
-			<span>detayli bilgi</span>
-		</a><!-- İçerik -->
+		<!-- Sayfa -->
+		<div id="app" class="app">
 
-		<!-- Butonlar -->
-		<div class="cerez-popup__butonlar">
-			<button class="buton" aria-label="Anladım">anladım</button>
-			<button class="buton buton--2" aria-label="Sonra hatırlat">sonra hatırlat</button>
-		</div><!-- Butonlar -->
-	</div><!-- Çerez Popup SON -->
+			<!-- Header -->
+			<header id="header" class="header">
 
-	<!-- Header -->
-	<header id="header" class="header">
+				<!-- Nav -->
+				<nav id="nav" class="nav">
 
-		<!-- Nav -->
-		<nav id="nav" class="nav">
+				</nav><!-- Nav SON -->
+			</header><!-- Header SON -->
 
-		</nav><!-- Nav SON -->
-	</header><!-- Header SON -->
+			<!-- Aside -->
+			<aside id="aside" class="aside">
 
-	<!-- Aside -->
-	<aside id="aside" class="aside">
+			</aside><!-- Aside SON -->
 
-	</aside><!-- Aside SON -->
+			<!-- Uygulama -->
+			<main id="main" class="main">
 
-	<!-- Uygulama -->
-	<main id="root">
+				<!-- Section -->
+				<section id="" class="">
 
-		<!-- Section -->
-		<section id="" class="">
+				</section><!-- Section SON -->
+			</main><!-- Uygulama SON -->
 
-		</section><!-- Section SON -->
-	</main><!-- Uygulama SON -->
+			<!-- Footer -->
+			<footer id="footer" class="footer">
 
-	<!-- Footer -->
-	<footer id="footer" class="footer">
-
-	</footer><!-- Footer SON -->
+			</footer><!-- Footer SON -->
+		</div><!-- Sayfa SON -->
+	</div><!-- Root SON -->
 
 	<!-- Js -->
 	<script type="module" src="assets/js/app.js" defer></script>
