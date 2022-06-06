@@ -1,20 +1,17 @@
 {
-	"name": "html-dosya-yapim",
+	"name": "proje-ismi",
 	"version": "1.6.0",
-	"homepage": "http://drementer.com",
-	"description": "Projelerim için kalıp",
-	"main": "",
+	"homepage": "http://proje-ismi.com",
+	"description": "Proje açıklaması",
 	"scripts": {
 		"": ""
 	},
 	"keywords": [
-		"scss",
-		"css",
-		"html"
+		""
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/drementer/html-dosya-yapim.git"
+		"url": "git+https://github.com/drementer/proje-ismi.git"
 	},
 	"author": {
 		"name": "drementer",
@@ -23,6 +20,6 @@
 	},
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/drementer/html-dosya-yapim/issues"
+		"url": "https://github.com/drementer/proje-ismi/issues"
 	}
 }
