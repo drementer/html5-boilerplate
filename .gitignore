@@ -25,6 +25,7 @@ bower_components
 
 # Project
 /dist/*
+/src/assets/css/*
 !/dist/robot.txt
 /build/
 /tmp/
