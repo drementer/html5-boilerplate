@@ -4,7 +4,9 @@
 	"homepage": "http://.com",
 	"description": "",
 	"scripts": {
-		"": ""
+		"watch": "parcel watch src/*.html --public-url ./ --no-source-maps",
+		"dev": "parcel src/*.html --open --no-cache --no-source-maps",
+		"build": "parcel build src/*.html --public-url ./ --no-source-maps"
 	},
 	"keywords": [
 		""
