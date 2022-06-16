@@ -23,7 +23,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# General
+# MacOS general
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -73,10 +73,13 @@ Temporary Items
 # Parcel Bundler
 .parcel-cache
 
+# Npm packages
+package-lock.json
+
 # Project
 /dist/*
 !/dist/robot.txt
-/src/assets/css/*
+/src/assets/css/*.css
+!/src/assets/css/vendors/*
 /build/
 /tmp/
-package-lock.json
