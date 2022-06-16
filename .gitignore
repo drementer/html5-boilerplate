@@ -28,9 +28,6 @@ $RECYCLE.BIN/
 .AppleDouble
 .LSOverride
 
-# Icon must end with two \r
-Icon
-
 # Thumbnails
 ._*
 
@@ -74,10 +71,16 @@ Temporary Items
 .parcel-cache
 
 # Project
-/dist/*
-!/dist/robot.txt
-!/dist/site.webmanifest
 /src/assets/css/*
+/dist/*
 /build/
 /tmp/
+!robot.txt
+!site.webmanifest
 package-lock.json
+
+# Icons
+Icon
+!icon.png
+!icon.svg
+!favicon.ico
