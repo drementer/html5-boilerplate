@@ -75,8 +75,9 @@ Temporary Items
 
 # Project
 /dist/*
-/src/assets/css/*
 !/dist/robot.txt
+!/dist/site.webmanifest
+/src/assets/css/*
 /build/
 /tmp/
 package-lock.json
