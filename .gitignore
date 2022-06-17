@@ -74,6 +74,7 @@ Temporary Items
 .parcel-cache
 
 # Npm packages
+/node_modules/*
 package-lock.json
 
 # Project
