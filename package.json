@@ -15,7 +15,7 @@
 		"type": "git",
 		"url": "git+https://github.com/drementer/.git"
 	},
-		"bugs": {
+	"bugs": {
 		"url": "https://github.com/drementer//issues"
 	},
 	"author": {
