@@ -1,8 +1,8 @@
 {
-	"name": "",
+	"name": "proje-ismi",
 	"version": "0.0.1",
-	"homepage": "http://.com",
-	"description": "",
+	"homepage": "http://proje-ismi.com",
+	"description": "Proje açıklaması",
 	"scripts": {
 		"watch": "parcel watch src/*.html --public-url ./ --no-source-maps",
 		"dev": "parcel src/*.html --open --no-cache --no-source-maps",
@@ -13,15 +13,15 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/drementer/.git"
+		"url": "git+https://github.com/proje-sahibi/proje-ismi.git"
 	},
 	"bugs": {
-		"url": "https://github.com/drementer//issues"
+		"url": "https://github.com/proje-sahibi/proje-ismi/issues"
 	},
 	"author": {
-		"name": "drementer",
-		"email": "klncarslanburak@gmail.com",
-		"url": "https://github.com/drementer"
+		"name": "proje-sahibi",
+		"email": "proje-sahibi@gmail.com",
+		"url": "https://github.com/proje-sahibi"
 	},
 	"license": "MIT"
 }
