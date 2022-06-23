@@ -11,12 +11,12 @@ Proje açıklaması
 
 ## Hızlı Başlangıç
 
-[En güncel hali (zip)](https://github.com/drementer/proje-ismi/archive/refs/heads/master.zip)
+[En güncel hali (zip)](https://github.com/proje-sahibi/proje-ismi/archive/refs/heads/master.zip)
 
 Terminal kullanarak indir
 
 ```bash
-  git clone https://github.com/drementer/proje-ismi.git
+  git clone https://github.com/proje-sahibi/proje-ismi.git
 ```
 
 ## Kullanım/Örnekler
@@ -27,7 +27,7 @@ Terminal kullanarak indir
 
 ## Geliştirici
 
--   [@drementer](https://github.com/drementer)
+-   [@proje-sahibi](https://github.com/proje-sahibi)
 
 ## Lisans
 
