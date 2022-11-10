@@ -1,22 +1,20 @@
 {
-	"name": "proje-ismi",
-	"version": "0.0.1",
-	"homepage": "http://proje-ismi.com",
-	"description": "Proje açıklaması",
-	"scripts": {
-		"watch": "parcel watch src/*.html --public-url ./ --no-source-maps",
-		"dev": "parcel src/*.html --open --no-cache --no-source-maps",
-		"build": "parcel build src/*.html --public-url ./ --no-source-maps"
-	},
-	"keywords": [],
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/proje-sahibi/proje-ismi.git"
-	},
-	"bugs": {
-		"url": "https://github.com/proje-sahibi/proje-ismi/issues"
-	},
-	"author": "proje-sahibi <proje-sahibi@gmail.com> (https://github.com/proje-sahibi)",
-	"license": "MIT",
-	"main": "index.js"
+  "name": "project-name",
+  "version": "0.0.1",
+  "homepage": "http://project-name.com",
+  "description": "Proje açıklaması",
+  "author": "proje-sahibi <proje-sahibi@gmail.com> (https://github.com/project-owner)",
+  "main": "index.js",
+  "scripts": {
+    "": ""
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/project-owner/project-name.git"
+  },
+  "bugs": {
+    "url": "https://github.com/project-owner/project-name/issues"
+  },
+  "license": "MIT"
 }
