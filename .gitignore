@@ -79,8 +79,5 @@ package-lock.json
 
 # Project
 /dist/*
-!/dist/robot.txt
-/src/assets/css/*.css
-!/src/assets/css/vendors/*
 /build/
 /tmp/
