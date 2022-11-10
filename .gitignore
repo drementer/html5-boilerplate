@@ -78,6 +78,6 @@ Temporary Items
 package-lock.json
 
 # Project
-/dist/*
+# /dist/*
 /build/
 /tmp/

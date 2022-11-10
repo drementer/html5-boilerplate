@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "homepage": "http://project-name.com",
   "description": "Proje açıklaması",
-  "author": "proje-sahibi <proje-sahibi@gmail.com> (https://github.com/project-owner)",
+  "author": "project-owner <project-owner@gmail.com> (https://github.com/project-owner)",
   "main": "index.js",
   "scripts": {
     "": ""
