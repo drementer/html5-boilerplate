@@ -1,6 +1,6 @@
 {
-	"name": "proje-ismi",
-	"short_name": "proje-kisa-ismi",
+	"name": "project-name",
+	"short_name": "project-short-name",
 	"icons": [
 		{
 			"src": "icon.png",
