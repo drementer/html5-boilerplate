@@ -8,9 +8,7 @@
 		"dev": "parcel src/*.html --open --no-cache --no-source-maps",
 		"build": "parcel build src/*.html --public-url ./ --no-source-maps"
 	},
-	"keywords": [
-		""
-	],
+	"keywords": [],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/proje-sahibi/proje-ismi.git"
@@ -18,10 +16,7 @@
 	"bugs": {
 		"url": "https://github.com/proje-sahibi/proje-ismi/issues"
 	},
-	"author": {
-		"name": "proje-sahibi",
-		"email": "proje-sahibi@gmail.com",
-		"url": "https://github.com/proje-sahibi"
-	},
-	"license": "MIT"
+	"author": "proje-sahibi <proje-sahibi@gmail.com> (https://github.com/proje-sahibi)",
+	"license": "MIT",
+	"main": "index.js"
 }
