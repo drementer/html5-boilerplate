@@ -2,7 +2,7 @@
   "name": "project-name",
   "version": "0.0.1",
   "homepage": "http://project-name.com",
-  "description": "Proje açıklaması",
+  "description": "Proje description",
   "author": "project-owner <project-owner@gmail.com> (https://github.com/project-owner)",
   "main": "index.js",
   "scripts": {
