@@ -4,7 +4,6 @@
   "homepage": "http://project-name.com",
   "description": "Proje description",
   "author": "project-owner <project-owner@gmail.com> (https://github.com/project-owner)",
-  "main": "index.js",
   "scripts": {
     "": ""
   },
